@@ -1,0 +1,170 @@
+﻿/* 2019.Jan.12 13:45 - Temporary Color Palette
+	Taken from here: https://www.canva.com/learn/brand-color-palette/
+	15) Mellow Musings
+	#C4D4E0 - Powder Blue
+	#9AABB9 - Nantucket
+	#E2B49A - Apricot
+	#E9C77B - Jasmine
+	#193446 - Ink
+
+	Other Resources
+	- Averaging out a Photo For a Palette: https://www.canva.com/color-palette/;
+	- Paletton - Some Mathematical Color Wheel Thing: http://paletton.com/
+*/
+body {
+	margin: auto;
+	text-align: center;
+}
+
+.topnav {
+    background-color: #193446;
+    overflow: auto;
+    height: 45px;
+    padding-left: 150px;
+    padding-right: 150px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.topnav-left {
+	/*float: left;*/
+	width: 200px;
+	margin-left: 50px;
+	margin-right: 50px;
+
+	display: flex;
+	justify-content: flex-end;
+}
+
+.topnav-center {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.topnav-right {
+	/*float: right;*/
+	width: 200px;
+	margin-left: 50px;
+	margin-right: 50px;
+
+	display: flex;
+	justify-content: flex-start;
+}
+
+.topnav-left a {
+	color: white;
+	margin: 10px;	
+}
+
+.topnav-center a {
+	color: white;
+	margin: 10px;	
+}
+
+.topnav-right a {
+	color: white;
+	margin: 10px
+}
+
+.header-splash {
+	background-color: #E9C77B;
+	height: 200px;
+	padding: 20px;
+
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-splash p {
+	color: #007399;
+}
+
+.event-floor {
+	background-color: #C4D4E0;
+	height:500px;
+}
+
+.filter-searchbar {
+	background-color: #9AABB9;
+	height: 60px;
+
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-searchbar-left {
+	width: 150px;
+
+	display: flex;
+	justify-content: flex-start;
+}
+
+.filter-searchbar-center {
+	width: 350px;
+}
+
+.filter-searchbar-right {
+	width: 150px;
+
+	display: flex;
+	justify-content: flex-end;
+}
+
+.filter-searchbar-left button {
+	padding: 10px;
+}
+
+.working-event-floor {
+	margin-left: 150px;
+	margin-right: 150px;
+}
+
+.event-box-1 {
+	background-color: #FFFFFF;
+	height: 80px;
+	margin: 10px;
+
+	display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.event-box-2 {
+	background-color: #FFFFFF;
+	height: 80px;
+	margin: 10px;
+}
+
+.event-box-3 {
+	background-color: #FFFFFF;
+	height: 80px;
+	margin: 10px;
+}
+
+.events-picture {
+	background-color: #000000;
+	height: 80px;
+}
+
+.events-info {
+	height: 80px;
+}
+
+.events-select {
+	background-color: #000000;
+	height: 80px;
+}
+
+.bottomnav {
+    background-color: #193446;
+    height: 80px;
+}
+
