@@ -24,54 +24,56 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
 
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>Incite - Discover More</title>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     
-    <div class="topnav">
-        <div class="topnav-left">
-          <a href="#about">About</a>
-          <a href="#contact-us">Contact Us</a>
-        </div>
+    <header>
+      <a href="#home" class = home-button>Incite</a>
 
-        <div class=topnav-center>
-          <a href="#home">Incite</a>
-        </div>
+      <nav class="topnav">
+        <ul>
+          <li><a href="#about">About</a>
+          <li><a href="#contact-us">Contact Us</a>
+          <li><a href="#submit-an-event">Submit an Event</a>
+          <li><a href="#login">Login</a>
+        </ul>
+      </nav>
+    </header>
 
-        <div class="topnav-right">
-          <a href="#submit-an-event">Submit an Event</a>
-          <a href="#login">Login</a>
-        </div>
-    </div>
 
-    <div class="header-splash">
-      <p>Discover More</p>
-    </div>
-    
+    <section class="splash">
+      <h1>Discover More</h1>
+    </section>
 
-    <div class="event-floor">
-      <div class="filter-searchbar">
-        <div class="filter-searchbar-left">
-          <button name="sort-button">Sort By</button>
-          <button name="filter-button">Filter By</button>
-        </div>
 
-        <div class="filter-searchbar-center">
-          <form>
-            <input type="text">
-
-          </form>
-        </div>
-
-        <div class="filter-searchbar-right">
-
-        </div>            
+    <section class="filter-searchbar">
+      <div class="filter-searchbar-left">
+        <button name="sort-button">Sort By</button>
+        <button name="filter-button">Filter By</button>
       </div>
 
-      <div class="working-event-floor">
+      <div class="filter-searchbar-center">
+        <form>
+          <input type="text">
+
+        </form>
+      </div>
+
+      <div class="filter-searchbar-right">
+
+      </div>            
+    </section>
+
+    
+
+
+    <section class="working-event-floor">
+      <div class="event-floor">
         <div class="event-box-1">
           <div class="events-picture">
             
@@ -94,14 +96,14 @@
 
         </div>
       </div>
-    </div>
+    </section>
 
     
     
 
-    <div class="bottomnav">
+  <nav class="bottomnav">
 
-    </div>
+  </nav>
     
 <!--     <a href="https://www.linkedin.com/in/mitchell-wu-a10162156/">LinkedIn</a>
     <a href="https://www.facebook.com/mitchellw.2021">Facebook</a>
