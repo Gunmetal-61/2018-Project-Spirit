@@ -90,11 +90,14 @@ class EventDetails extends React.Component {
                     </Col>
                   </Row>
                   <Row>
-                    <Col xs="6">
+                    <Col xs="3">
                       <h5 className="event-subtitle">April 20, 1969 00:00-16:00</h5>
                     </Col>
-                    <Col xs="6">
-                      <h5 className="event-subtitle">Event Subtitle</h5>
+                    <Col xs="4">
+                      <h5 className="event-subtitle">33000 Arroyo Drive, Irvine CA 92617</h5>
+                    </Col>
+                    <Col xs="4">
+                      <h5 className="event-subtitle">30 RSVP'ed</h5>
                     </Col>
                   </Row>
                 </CardHeader>
@@ -102,10 +105,62 @@ class EventDetails extends React.Component {
                   <p className="event-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                   </p>
+                  <p>
+                  Signup URL
+                  </p>
+                  <p>
+                  Info URL #1
+                  </p>
+                  <p>
+                  Info URL #2
+                  </p>
+                  <Row>
+                    <Col>
+                      <Button
+                        color="info"
+                        id="0"
+                        size="sm"
+                        tag="label"
+                      >
+                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                          RSVP
+                        </span>
+                        <span className="d-block d-sm-none">
+                          <i className="tim-icons icon-single-02" />
+                        </span>
+                      </Button>
+                      <Button
+                        color="info"
+                        id="0"
+                        size="sm"
+                        tag="label"
+                      >
+                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                          Bookmark
+                        </span>
+                        <span className="d-block d-sm-none">
+                          <i className="tim-icons icon-single-02" />
+                        </span>
+                      </Button>
+                      <Button
+                        color="info"
+                        id="0"
+                        size="sm"
+                        tag="label"
+                      >
+                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                          Export to Google Calendar
+                        </span>
+                        <span className="d-block d-sm-none">
+                          <i className="tim-icons icon-single-02" />
+                        </span>
+                      </Button>
+                    </Col>
+                  </Row>
                 </CardBody>
               </Card>
 
-              <Card className="tags">
+              <Card className="photos">
                 <CardHeader>
                   <CardTitle tag="h3">Photos</CardTitle>
                 </CardHeader>
@@ -119,7 +174,19 @@ class EventDetails extends React.Component {
                   <CardTitle tag="h3">About the Organizer</CardTitle>
                 </CardHeader>
                 <CardBody>
-
+                  <Button
+                    color="info"
+                    id="0"
+                    size="sm"
+                    tag="label"
+                  >
+                    <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                      Keep track of events by this organizer
+                    </span>
+                    <span className="d-block d-sm-none">
+                      <i className="tim-icons icon-single-02" />
+                    </span>
+                  </Button>
                 </CardBody>
               </Card>
             </Col>
@@ -129,7 +196,36 @@ class EventDetails extends React.Component {
                   <CardTitle tag="h3">Event Tags</CardTitle>
                 </CardHeader>
                 <CardBody>
-
+                <Row>
+                  <Col>
+                    <Button
+                      color="info"
+                      id="0"
+                      size="sm"
+                      tag="label"
+                    >
+                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                        Tag 1
+                      </span>
+                      <span className="d-block d-sm-none">
+                        <i className="tim-icons icon-single-02" />
+                      </span>
+                    </Button>
+                    <Button
+                      color="info"
+                      id="0"
+                      size="sm"
+                      tag="label"
+                    >
+                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                        Tag 2
+                      </span>
+                      <span className="d-block d-sm-none">
+                        <i className="tim-icons icon-single-02" />
+                      </span>
+                    </Button>
+                  </Col>
+                </Row>
                 </CardBody>
               </Card>
 

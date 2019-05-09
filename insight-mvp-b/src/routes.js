@@ -79,7 +79,7 @@ const routes = [
   },
   {
     path: "/review-submissions",
-    name: "Review Subs",
+    name: "Review Submissions (Admin)",
     rtlName: "لوحة القيادة",
     icon: "tim-icons icon-paper",
     component: Review,
