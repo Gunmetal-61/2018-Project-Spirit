@@ -29,7 +29,8 @@ import {
 
 // core components
 import EventDetails from "../mvp_views/EventDetails.jsx"
-
+import EventCard from "../mvp_components/EventCard.jsx"
+import EventBar from "../mvp_components/EventBar.jsx"
 
 class Dash extends React.Component {
   constructor(props) {
@@ -46,8 +47,8 @@ class Dash extends React.Component {
                 <CardTitle tag="h1">Following</CardTitle>
               </CardHeader>
               <CardBody>
-                <EventDetails>
-                </EventDetails>
+                <EventBar>
+                </EventBar>
               </CardBody>
             </Card>
           </Col>
