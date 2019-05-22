@@ -12,8 +12,6 @@ import "assets/scss/black-dashboard-pro-react.scss?v=1.0.0";
 import "assets/demo/demo.css";
 import "react-notification-alert/dist/animate.css";
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
 const hist = createBrowserHistory();
 
 ReactDOM.render(

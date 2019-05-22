@@ -45,106 +45,119 @@ import {
   Marker
 } from "react-google-maps";
 
+
+const RegularMap = withScriptjs(
+  withGoogleMap(props => (
+    <GoogleMap
+      defaultZoom={8}
+      defaultCenter={{ lat: 40.748817, lng: -73.985428 }}
+      defaultOptions={{
+        scrollwheel: false
+      }}
+    >
+      <Marker position={{ lat: 40.748817, lng: -73.985428 }} />
+    </GoogleMap>
+  ))
+);
+
+
 class EventDetails extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const {eventInfo} = this.props;
     return(
-      <div className="content">
-        <Row>
-          <Col sm="12">
-            <Card className="main-detail" style={{backgroundColor: 'DarkSalmon'}}>
-              <CardBody>
-                <Row>
-                  <Col sm="1">
-                    <img height="110px" width="110px" src={require("assets/img/uci.ico")} alt="..." />
-                  </Col>
-                  <Col sm="11">
-                    <Row>
-                      <Col xs="8">
-                        <CardTitle tag="h2" style={{fontWeight: 'bold', padding: 0, margin: 0}}>{eventInfo.eventName}</CardTitle>
-                      </Col>
-                      <Col xs="4">
-                        <h2 className="rsvp-count" style={{fontWeight: 'bold', padding: 0, margin: 0, textAlign: 'right'}}>{eventInfo.rsvpCount} RSVP'ed</h2>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col sm="3">
-                        <Row>
-                          <Col xs="12">
-                            <h4 style={{padding: 0, margin: 0}}>{eventInfo.orgName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.date}  {eventInfo.startTime}-{eventInfo.endTime}</h4>
-                            <p className="event-location" style={{padding: 0, margin: 0}}>{eventInfo.location.altLocText}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.location.city}, {eventInfo.location.state}</p>
-                          </Col>
-                        </Row>
-                      </Col>
-                      <Col sm="8">
-                        <h3 className="event-desc" style={{padding: 0, margin: 0}}>{eventInfo.eventSubtitle}</h3>
-
-                      </Col>
-                      <Col sm="1">
-
-                      </Col>
-                    </Row>
-
-                    <hr />
-
-                    <Row>
-                      <Col sm="3">
-                        <Row>
-                          <p style={{padding: 0, margin: 0}}>Actions</p>
-                        </Row>
-                        <Row>
-                          <Button color="info" id="0" size="sm">
-                            <span>
-                              RSVP
-                            </span>
-                          </Button>
-                          <Button color="info" id="0" size="sm">
-                            <span>
-                              Bookmark
-                            </span>
-                          </Button>
-                          <Button color="info" id="0" size="sm">
-                            <span>
-                              Export
-                            </span>
-                          </Button>
-                        </Row>
-                      </Col>
-
-                      <Col sm="3">
-                        <Row>
-                          <p style={{padding: 0, margin: 0}}>External Links</p>
-                        </Row>
-                        <Row>
-                          <Button color="default" id="0" size="sm">
-                            <span>
-                              Info URL #1
-                            </span>
-                          </Button>
-                          <Button color="default" id="0" size="sm">
-                            <span>
-                              Info URL #2
-                            </span>
-                          </Button>
-                          <Button color="default" id="0" size="sm">
-                            <span>
-                              Signup URL
-                            </span>
-                          </Button>
-                        </Row>
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-      </div>
+      <>
+        <div className="content">
+          <Row>
+            <Col sm="12">
+              <Card className="main-detail">
+                <CardHeader>
+                  <Row>
+                    <Col xs="12">
+                      <CardTitle tag="h1">Event Title</CardTitle>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs="12">
+                      <h4 className="event-subtitle">Event Subtitle</h4>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs="3">
+                      <h5 className="event-subtitle">April 20, 1969 00:00-16:00</h5>
+                    </Col>
+                    <Col xs="4">
+                      <h5 className="event-subtitle">33000 Arroyo Drive, Irvine CA 92617</h5>
+                    </Col>
+                    <Col xs="4">
+                      <h5 className="event-subtitle">30 RSVP'ed</h5>
+                    </Col>
+                  </Row>
+                </CardHeader>
+                <CardBody>
+                  <p className="event-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <p>
+                  Signup URL
+                  </p>
+                  <p>
+                  Info URL #1
+                  </p>
+                  <p>
+                  Info URL #2
+                  </p>
+                  <Row>
+                    <Col>
+                      <Button
+                        color="info"
+                        id="0"
+                        size="sm"
+                        tag="label"
+                      >
+                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                          RSVP
+                        </span>
+                        <span className="d-block d-sm-none">
+                          <i className="tim-icons icon-single-02" />
+                        </span>
+                      </Button>
+                      <Button
+                        color="info"
+                        id="0"
+                        size="sm"
+                        tag="label"
+                      >
+                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                          Bookmark
+                        </span>
+                        <span className="d-block d-sm-none">
+                          <i className="tim-icons icon-single-02" />
+                        </span>
+                      </Button>
+                      <Button
+                        color="info"
+                        id="0"
+                        size="sm"
+                        tag="label"
+                      >
+                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                          Export to Google Calendar
+                        </span>
+                        <span className="d-block d-sm-none">
+                          <i className="tim-icons icon-single-02" />
+                        </span>
+                      </Button>
+                    </Col>
+                  </Row>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
+        </div>
+      </>
     );
   }
 }
