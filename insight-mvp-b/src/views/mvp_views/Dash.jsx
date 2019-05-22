@@ -32,6 +32,14 @@ import EventDetails from "../mvp_views/EventDetails.jsx"
 import EventCard from "../mvp_components/EventCard.jsx"
 import EventBar from "../mvp_components/EventBar.jsx"
 
+import {
+  aiCareerPanel,
+  hackNights,
+  iceSkate,
+  acmComp,
+  asuci
+} from "variables/mvp_variables/EventListingData.jsx";
+
 class Dash extends React.Component {
   constructor(props) {
     super(props);
@@ -41,28 +49,37 @@ class Dash extends React.Component {
     return(
       <div className="content">
         <Row>
-          <Col sm="4">
+          <Col xl="4" lg="6">
             <Card>
               <CardHeader>
                 <CardTitle tag="h1">Following</CardTitle>
               </CardHeader>
               <CardBody>
-                <EventBar>
-                </EventBar>
+                <EventCard eventInfo={aiCareerPanel}>
+                </EventCard>
+                <EventCard eventInfo={iceSkate}>
+                </EventCard>
+                <EventCard eventInfo={asuci}>
+                </EventCard>
               </CardBody>
             </Card>
           </Col>
-          <Col sm="4">
+          <Col xl="4" lg="6">
             <Card>
               <CardHeader>
-                <CardTitle tag="h1">From Your School Department</CardTitle>
+                <CardTitle tag="h1">From Your Field of Study</CardTitle>
               </CardHeader>
               <CardBody>
-
+                <EventCard eventInfo={aiCareerPanel}>
+                </EventCard>
+                <EventCard eventInfo={hackNights}>
+                </EventCard>
+                <EventCard eventInfo={acmComp}>
+                </EventCard>
               </CardBody>
             </Card>
           </Col>
-          <Col sm="4">
+          <Col xl="4" lg="12">
             <Card>
               <CardHeader>
                 <CardTitle tag="h1">New on Insight</CardTitle>
