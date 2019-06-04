@@ -86,7 +86,8 @@ class Dash extends React.Component {
                 <CardTitle tag="h1">New on Insight</CardTitle>
               </CardHeader>
               <CardBody>
-
+                <EventName eventInfo={asuci}>
+                </EventName>
               </CardBody>
             </Card>
 

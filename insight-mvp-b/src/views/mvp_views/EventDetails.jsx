@@ -1,4 +1,6 @@
 import React from "react";
+import Lightbox from 'react-images';
+
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
@@ -64,42 +66,42 @@ class EventDetails extends React.Component {
   }
 
   render() {
-    const organizationTags = aiCareerPanel.tags.organization.map((x) => (
+    const organizationTags = acmComp.tags.organization.map((x) => (
       <Button color="info" id="0" size="sm">
         <span>
           {x}
         </span>
       </Button>
     ));
-    const orgCatTags = aiCareerPanel.tags.orgCat.map((x) => (
+    const orgCatTags = acmComp.tags.orgCat.map((x) => (
       <Button color="info" id="0" size="sm">
         <span>
           {x}
         </span>
       </Button>
     ));
-    const universityTags = aiCareerPanel.tags.university.map((x) => (
+    const universityTags = acmComp.tags.university.map((x) => (
       <Button color="success" id="0" size="sm">
         <span>
           {x}
         </span>
       </Button>
     ));
-    const fieldStudyTags = aiCareerPanel.tags.fieldStudy.map((x) => (
+    const fieldStudyTags = acmComp.tags.fieldStudy.map((x) => (
       <Button color="success" id="0" size="sm">
         <span>
           {x}
         </span>
       </Button>
     ));
-    const interestTypeTags = aiCareerPanel.tags.interestType.map((x) => (
+    const interestTypeTags = acmComp.tags.interestType.map((x) => (
       <Button color="warning" id="0" size="sm">
         <span>
           {x}
         </span>
       </Button>
     ));
-    const eventTypeTags = aiCareerPanel.tags.eventType.map((x) => (
+    const eventTypeTags = acmComp.tags.eventType.map((x) => (
       <Button color="warning" id="0" size="sm">
         <span>
           {x}
@@ -107,13 +109,27 @@ class EventDetails extends React.Component {
       </Button>
     ));
 
+    const LIGHTBOX_IMAGE_SET = [
+      {
+        src: 'http://example.com/example/img1.jpg',
+        caption: 'A forest',
+        // As an array
+        srcSet: [
+          'http://example.com/example/img1_1024.jpg 1024w',
+          'http://example.com/example/img1_800.jpg 800w',
+          'http://example.com/example/img1_500.jpg 500w',
+          'http://example.com/example/img1_320.jpg 320w',
+        ],
+      },
+    ];
+
     return(
       <>
         <div className="content">
           <Row>
             <Col sm="12">
               <Card className="tags">
-                <CardImg top height="150px" src={require("assets/img/card-danger.png")} alt="..."/>
+                <CardImg top height="200px" style={{objectFit: 'cover'}} src={require("assets/img/mvp-img/ai-career-banner.jpg")} alt="..."/>
               </Card>
             </Col>
             <Col sm="8">
@@ -121,16 +137,16 @@ class EventDetails extends React.Component {
                 <CardHeader>
                   <Row>
                       <Col xs="8">
-                        <CardTitle tag="h1" style={{fontWeight: 'bold', padding: 0, margin: 0}}>{aiCareerPanel.listing.eventName}</CardTitle>
+                        <CardTitle tag="h1" style={{fontWeight: 'bold', padding: 0, margin: 0}}>{acmComp.listing.eventName}</CardTitle>
                       </Col>
                       <Col xs="4">
-                        <h2 className="rsvp-count" style={{fontWeight: 'bold', padding: 0, margin: 0, textAlign: 'right'}}>{aiCareerPanel.listing.rsvpCount} RSVP'ed</h2>
+                        <h2 className="rsvp-count" style={{fontWeight: 'bold', padding: 0, margin: 0, textAlign: 'right'}}>{acmComp.listing.rsvpCount} RSVP'ed</h2>
                       </Col>
                     </Row>
                   <Row>
                     <Col xs="12">
-                    <h4 style={{padding: 0, margin: 0}}>{aiCareerPanel.listing.orgName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{aiCareerPanel.listing.date}  {aiCareerPanel.listing.startTime}-{aiCareerPanel.listing.endTime}</h4>
-                    <p className="event-location" style={{padding: 0, margin: 0}}>{aiCareerPanel.listing.location.altLocText}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{aiCareerPanel.listing.location.city}, {aiCareerPanel.listing.location.state}</p>
+                    <h4 style={{padding: 0, margin: 0}}>{acmComp.listing.orgName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{acmComp.listing.date}  {acmComp.listing.startTime}-{acmComp.listing.endTime}</h4>
+                    <p className="event-location" style={{padding: 0, margin: 0}}>{acmComp.listing.location.altLocText}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{acmComp.listing.location.city}, {acmComp.listing.location.state}</p>
                     </Col>
                   </Row>
                 </CardHeader>
@@ -197,18 +213,38 @@ class EventDetails extends React.Component {
 
               <Card className="photos">
                 <CardHeader>
-                  <CardTitle tag="h3">Photos</CardTitle>
+                  <CardTitle tag="h3">Photos of Past Events by ACM at UCI</CardTitle>
                 </CardHeader>
                 <CardBody>
-
+                  <Lightbox
+                    images={[{ src: 'http://example.com/img1.jpg' }, { src: 'http://example.com/img2.jpg' }]}
+                    // isOpen={this.state.lightboxIsOpen}
+                    // onClickPrev={this.gotoPrevious}
+                    // onClickNext={this.gotoNext}
+                    // onClose={this.closeLightbox}
+                  />
                 </CardBody>
               </Card>
 
               <Card className="about-org">
                 <CardHeader>
-                  <CardTitle tag="h3">About the Organizer</CardTitle>
+                  <CardTitle tag="h3" style={{padding: 0, margin: 0}}>About the Organizer</CardTitle>
+                  <h4>{acmComp.listing.orgName}</h4>
                 </CardHeader>
                 <CardBody>
+                  <p>
+                  Members of ACM@UCI enjoy computer science and puzzles. We study algorithms and compete 
+                  in prestigious programming contests like ICPC and IEEExtreme. The overall mission of 
+                  our club is to maximize understanding of computer science topics and develop problem 
+                  solving skills that one would not generally learn in a classroom setting. To this end, 
+                  we organize several activities. Twice a week, we host meetings where members solve a 
+                  problem set. Also, we facilitate campuswide competitions for students to further hone 
+                  their skills. Every fall, we field teams in ICPC and IEEExtreme. Last year, all 5 teams 
+                  we sent to the SoCal ICPC Regional were in the top 25 out of 98, and 2 teams at IEEExtreme 
+                  were in the top 100 in the world. We also organize an annual 8 week seminar series where 
+                  club members present on a research topic of interest. Currently, our club consists of ~500 
+                  members, with an average attendance of 30 at our meetings.
+                  </p>
                   <Button
                     color="info"
                     id="0"

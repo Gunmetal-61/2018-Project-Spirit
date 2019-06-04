@@ -91,220 +91,243 @@ class Submit extends React.Component {
             <Card>
               <CardHeader>
                 <CardTitle tag="h1" style={{textAlign: 'center', fontWeight: 'bold'}}>Submit an Event!</CardTitle>
+                <hr />
               </CardHeader>
               <CardBody>
+                
+                
                 <Form action="/" className="form-horizontal" method="get">
-                  <Row>
-                    <Label sm="2">Event Name</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2">Event Subtitle</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2">Event Description</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="textarea" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2">Org/Organizer Name</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <hr />
+                  <Card style={{backgroundColor: '#385170'}}>
+                    <h3 style={{textAlign: 'center', padding: 0, margin: 5}}>Basic Info</h3>
+                    <Row>
+                      <Label sm="2">Event Name</Label>
+                      <Col sm="10">
+                        <FormGroup>
+                          <Input type="text" />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Label sm="2">Event Subtitle</Label>
+                      <Col sm="10">
+                        <FormGroup>
+                          <Input type="text" />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Label sm="2">Event Description</Label>
+                      <Col sm="10">
+                        <FormGroup>
+                          <Input type="textarea" />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Label sm="2">Org/Organizer Name</Label>
+                      <Col sm="10">
+                        <FormGroup>
+                          <Input type="text" />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </Card>
 
 
-                  <Row>
-                    <Label sm="2">Start</Label>
-                    <Col sm="5">
-                      <FormGroup>
-                        <ReactDatetime
-                          inputProps={{
-                            className: "form-control",
-                            placeholder: "Date"
-                          }}
-                          timeFormat={false}
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col sm="5">
-                      <FormGroup>
-                        <ReactDatetime
-                          dateFormat={false}
-                          inputProps={{
-                            className: "form-control",
-                            placeholder: "Time"
-                          }}
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2">End</Label>
-                    <Col sm="5">
-                      <FormGroup>
-                        <ReactDatetime
-                          inputProps={{
-                            className: "form-control",
-                            placeholder: "Date"
-                          }}
-                          timeFormat={false}
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col sm="5">
-                      <FormGroup>
-                        <ReactDatetime
-                          dateFormat={false}
-                          inputProps={{
-                            className: "form-control",
-                            placeholder: "Time"
-                          }}
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <hr />
-
-                  
-                  <Row>
-                    <Label sm="2">Location/Venue Name</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" placeholder="e.g. &quot;Student Center Pacific Ballroom B&quot;"/>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2">Address</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" placeholder="Street"/>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2"></Label>
-                    <Col sm="3">
-                      <FormGroup>
-                        <Input type="text" placeholder="City"/>
-                      </FormGroup>
-                    </Col>
-                    <Col sm="3">
-                      <FormGroup>
-                        <Input type="text" placeholder="State"/>
-                      </FormGroup>
-                    </Col>
-                    <Col sm="2">
-                      <FormGroup>
-                        <Input type="text" placeholder="Country"/>
-                      </FormGroup>
-                    </Col>
-                    <Col sm="2">
-                      <FormGroup>
-                        <Input type="text" placeholder="Zip"/>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <hr />
-
-                  
-                  <Row>
-                    <Label sm="2">Info URL A</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2">Info URL B</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2">Sign-Up URL</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <hr />
-
-                  
-                  <Row>
-                    <Label sm="2">Image</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <hr />
-
+                  <Card style={{backgroundColor: '#385170'}}>
+                    <h3 style={{textAlign: 'center', padding: 0, margin: 5}}>Time</h3>
+                    <Row>
+                      <Label sm="2">Start</Label>
+                      <Col sm="5">
+                        <FormGroup>
+                          <ReactDatetime
+                            inputProps={{
+                              className: "form-control",
+                              placeholder: "Date"
+                            }}
+                            timeFormat={false}
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col sm="5">
+                        <FormGroup>
+                          <ReactDatetime
+                            dateFormat={false}
+                            inputProps={{
+                              className: "form-control",
+                              placeholder: "Time"
+                            }}
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Label sm="2">End</Label>
+                      <Col sm="5">
+                        <FormGroup>
+                          <ReactDatetime
+                            inputProps={{
+                              className: "form-control",
+                              placeholder: "Date"
+                            }}
+                            timeFormat={false}
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col sm="5">
+                        <FormGroup>
+                          <ReactDatetime
+                            dateFormat={false}
+                            inputProps={{
+                              className: "form-control",
+                              placeholder: "Time"
+                            }}
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </Card>
                   
 
-
+                  <Card style={{backgroundColor: '#385170'}}>
+                    <h3 style={{textAlign: 'center', padding: 0, margin: 5}}>Location</h3>
+                    <Row>
+                      <Label sm="2">Location/Venue Name</Label>
+                      <Col sm="10">
+                        <FormGroup>
+                          <Input type="text" placeholder="e.g. &quot;Student Center Pacific Ballroom B&quot;"/>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Label sm="2">Address</Label>
+                      <Col sm="10">
+                        <FormGroup>
+                          <Input type="text" placeholder="Street"/>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Label sm="2"></Label>
+                      <Col sm="3">
+                        <FormGroup>
+                          <Input type="text" placeholder="City"/>
+                        </FormGroup>
+                      </Col>
+                      <Col sm="3">
+                        <FormGroup>
+                          <Input type="text" placeholder="State"/>
+                        </FormGroup>
+                      </Col>
+                      <Col sm="2">
+                        <FormGroup>
+                          <Input type="text" placeholder="Country"/>
+                        </FormGroup>
+                      </Col>
+                      <Col sm="2">
+                        <FormGroup>
+                          <Input type="text" placeholder="Zip"/>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </Card>
+                    
+                  
+                  <Card style={{backgroundColor: '#385170'}}>
+                    <h3 style={{textAlign: 'center', padding: 0, margin: 5}}>Additional Info</h3>
+                    <Row>
+                      <Label sm="2">Info URL A</Label>
+                      <Col sm="10">
+                        <FormGroup>
+                          <Input type="text" />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Label sm="2">Info URL B</Label>
+                      <Col sm="10">
+                        <FormGroup>
+                          <Input type="text" />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Label sm="2">Sign-Up URL</Label>
+                      <Col sm="10">
+                        <FormGroup>
+                          <Input type="text" />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Label sm="2">Image</Label>
+                      <Col sm="10">
+                        <FormGroup>
+                          <Input type="text" />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </Card>
+                  
+                  
+                  <Card style={{backgroundColor: '#385170'}}>
+                    <h3 style={{textAlign: 'center', padding: 0, margin: 5}}>Tags</h3>
+                    <Row>
+                      <Label sm="2">Organizations</Label>
+                      <Col sm="10">
+                        {oTags}
+                      </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                      <Label sm="2">Organization Category</Label>
+                      <Col sm="10">
+                        {oCTags}
+                      </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                      <Label sm="2">University</Label>
+                      <Col sm="10">
+                        {uTags}
+                      </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                      <Label sm="2">Field of Study</Label>
+                      <Col sm="10">
+                        {fSTags}
+                      </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                      <Label sm="2">Interest Type</Label>
+                      <Col sm="10">
+                        {iTTags}
+                      </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                      <Label sm="2">Event Type</Label>
+                      <Col sm="10">
+                        {eTTags}
+                      </Col>
+                    </Row>
+                  </Card>
+                  <hr />
+                  
                   <Row>
-                    <Label sm="2">Organizations</Label>
-                    <Col sm="10">
-                      {oTags}
+                    <Col>
+                      <div style={{textAlign: 'center'}}>
+                        <Button color="primary" id="0" size="lg">
+                          <span>
+                            <h3 style={{padding: 0, margin: 0}}>Submit</h3>
+                          </span>
+                        </Button>
+                      </div>
                     </Col>
                   </Row>
-                  <br />
-                  <Row>
-                    <Label sm="2">Organization Category</Label>
-                    <Col sm="10">
-                      {oCTags}
-                    </Col>
-                  </Row>
-                  <br />
-                  <Row>
-                    <Label sm="2">University</Label>
-                    <Col sm="10">
-                      {uTags}
-                    </Col>
-                  </Row>
-                  <br />
-                  <Row>
-                    <Label sm="2">Field of Study</Label>
-                    <Col sm="10">
-                      {fSTags}
-                    </Col>
-                  </Row>
-                  <br />
-                  <Row>
-                    <Label sm="2">Interest Type</Label>
-                    <Col sm="10">
-                      {iTTags}
-                    </Col>
-                  </Row>
-                  <br />
-                  <Row>
-                    <Label sm="2">Event Type</Label>
-                    <Col sm="10">
-                      {eTTags}
-                    </Col>
-                  </Row>
+                  
                 </Form>
               </CardBody>
             </Card>
