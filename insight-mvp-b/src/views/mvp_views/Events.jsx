@@ -16,7 +16,10 @@ import {
   Col,
   Card,
   CardBody,
-  CardImg
+  CardImg,
+  Input,
+  Label,
+  FormGroup
 } from "reactstrap";
 
 
@@ -43,39 +46,66 @@ class EventDetails extends React.Component {
         <div className="content">
           <Card>
             <CardBody>
+              <br />
+              <Row>
+                <Col>
+                  <h1 style={{padding: 10, margin: 0, textAlign: 'center'}}>Search for An Event!</h1>
+                </Col>
+              </Row>
+              <Row>
+                <Col sm="8" className="ml-auto mr-auto" style={{textAlign: 'center'}}>
+                  <FormGroup>
+                    <Input type="text" />
+                  </FormGroup>
+                </Col>
+
+              </Row>
+              <Row>
+                <Col>
+                  <h3 style={{padding: 10, margin: 0, textAlign: 'center'}}>Or Filter by Tags!</h3>
+                </Col>
+              </Row>
               <Row>
                 <Col sm="12">
-                  <Card className="event-options">
+                  <div className='text-center'>
+                    <ButtonGroup>
+                      <Button color="info" type="button">
+                        Organization
+                      </Button>
+                      <Button color="info" type="button">
+                        Org Category
+                      </Button>
+                      <Button color="success" type="button">
+                        University
+                      </Button>
+                      <Button color="success" type="button">
+                        Field of Study
+                      </Button>
+                      <Button color="warning" type="button">
+                        Interest Type
+                      </Button>
+                      <Button color="warning" type="button">
+                        Event Type
+                      </Button>
+                    </ButtonGroup>
+                  </div>
+                </Col>
+              </Row>
+              <br></br>
+
+
+
+
+
+
+              <Row>
+                <Col sm="12">
+                  <Card style={{backgroundColor: '#385170'}} className="event-options">
                     <CardBody>
                       <Row>
-                        <Col sm="10">
+                        <Col sm="12">
                           <div className='text-center'>
-                            <ButtonGroup>
-                              <Button color="info" type="button">
-                                Organization
-                              </Button>
-                              <Button color="info" type="button">
-                                Org Category
-                              </Button>
-                              <Button color="success" type="button">
-                                University
-                              </Button>
-                              <Button color="success" type="button">
-                                Field of Study
-                              </Button>
-                              <Button color="warning" type="button">
-                                Interest Type
-                              </Button>
-                              <Button color="warning" type="button">
-                                Event Type
-                              </Button>
-                            </ButtonGroup>
-                          </div>
-                        </Col>
-
-                        <Col sm="2">
-                          <div className='text-center'>
-                            <UncontrolledDropdown style={{width: 130}}>
+                            <UncontrolledDropdown className="ml-auto" style={{width: 130}}>
                               <DropdownToggle
                                 aria-expanded={false}
                                 aria-haspopup={true}
@@ -88,8 +118,14 @@ class EventDetails extends React.Component {
                               >
                                 View As
                               </DropdownToggle>
+
+
+
                               <DropdownMenu aria-labelledby="dropdownMenuButton">
-                                <DropdownItem header>
+                                <DropdownItem
+                                  href="#pablo"
+                                  onClick={e => e.preventDefault()}
+                                >
                                   List
                                 </DropdownItem>
                                 <DropdownItem
@@ -104,49 +140,44 @@ class EventDetails extends React.Component {
                                 >
                                   Calendar
                                 </DropdownItem>
-                                <DropdownItem
-                                  href="#pablo"
-                                  onClick={e => e.preventDefault()}
-                                >
-                                  Something else here
-                                </DropdownItem>
                               </DropdownMenu>
                             </UncontrolledDropdown>
                           </div>
                         </Col>
                       </Row>
+                      <hr />
+                      <Row>
+                        <Col sm="12">
+                          <EventBar eventInfo={aiCareerPanel}>
+                          </EventBar>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col sm="12">
+                          <EventBar eventInfo={hackNights}>
+                          </EventBar>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col sm="12">
+                          <EventBar eventInfo={iceSkate}>
+                          </EventBar>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col sm="12">
+                          <EventBar eventInfo={acmComp}>
+                          </EventBar>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col sm="12">
+                          <EventBar eventInfo={asuci}>
+                          </EventBar>
+                        </Col>
+                      </Row>
                     </CardBody>
                   </Card>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm="12">
-                  <EventBar eventInfo={aiCareerPanel}>
-                  </EventBar>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm="12">
-                  <EventBar eventInfo={hackNights}>
-                  </EventBar>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm="12">
-                  <EventBar eventInfo={iceSkate}>
-                  </EventBar>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm="12">
-                  <EventBar eventInfo={acmComp}>
-                  </EventBar>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm="12">
-                  <EventBar eventInfo={asuci}>
-                  </EventBar>
                 </Col>
               </Row>
             </CardBody>

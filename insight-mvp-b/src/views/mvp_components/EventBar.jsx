@@ -27,16 +27,6 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
-
-// core components
-import {
-  chartExample1,
-  chartExample2,
-  chartExample3,
-  chartExample4
-} from "variables/charts.jsx";
-
-
 // react components used to create a google map
 import {
   withScriptjs,
@@ -45,18 +35,85 @@ import {
   Marker
 } from "react-google-maps";
 
-class EventDetails extends React.Component {
+class EventBar extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  // printTagLoop(tagArray) {
+  //   // var i;
+  //   // for (i = 0; i < tagArray.length; i++) {
+  //     return(
+  //       <div>
+  //         <Button color="default" id="0" size="sm">
+  //           <span>
+  //             Info URL #1
+  //           </span>
+  //         </Button>
+  //       </div>
+  //     );
+  //   // }
+  // }
+  //
+  // renderTags(eventInfo) {
+  //   printTagLoop(eventInfo.tags.organization);
+  //   printTagLoop(eventInfo.tags.orgCat);
+  //   printTagLoop(eventInfo.tags.university);
+  //   printTagLoop(eventInfo.tags.fieldStudy);
+  //   printTagLoop(eventInfo.tags.interestType);
+  //   printTagLoop(eventInfo.tags.eventType);
+  // }
+
   render() {
     const {eventInfo} = this.props;
+    const organizationTags = eventInfo.tags.organization.map((x) => (
+      <Button color="info" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+    const orgCatTags = eventInfo.tags.orgCat.map((x) => (
+      <Button color="info" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+    const universityTags = eventInfo.tags.university.map((x) => (
+      <Button color="success" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+    const fieldStudyTags = eventInfo.tags.fieldStudy.map((x) => (
+      <Button color="success" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+    const interestTypeTags = eventInfo.tags.interestType.map((x) => (
+      <Button color="warning" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+    const eventTypeTags = eventInfo.tags.eventType.map((x) => (
+      <Button color="warning" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+
     return(
       <div className="content">
         <Row>
           <Col sm="12">
-            <Card className="main-detail" style={{backgroundColor: 'DarkSalmon'}}>
+            <Card className="main-detail" style={{backgroundColor: '#c19191'}}>
               <CardBody>
                 <Row>
                   <Col sm="1">
@@ -65,23 +122,23 @@ class EventDetails extends React.Component {
                   <Col sm="11">
                     <Row>
                       <Col xs="8">
-                        <CardTitle tag="h2" style={{fontWeight: 'bold', padding: 0, margin: 0}}>{eventInfo.eventName}</CardTitle>
+                        <CardTitle tag="h2" style={{fontWeight: 'bold', padding: 0, margin: 0}}>{eventInfo.listing.eventName}</CardTitle>
                       </Col>
                       <Col xs="4">
-                        <h2 className="rsvp-count" style={{fontWeight: 'bold', padding: 0, margin: 0, textAlign: 'right'}}>{eventInfo.rsvpCount} RSVP'ed</h2>
+                        <h2 className="rsvp-count" style={{fontWeight: 'bold', padding: 0, margin: 0, textAlign: 'right'}}>{eventInfo.listing.rsvpCount} RSVP'ed</h2>
                       </Col>
                     </Row>
                     <Row>
                       <Col sm="3">
                         <Row>
                           <Col xs="12">
-                            <h4 style={{padding: 0, margin: 0}}>{eventInfo.orgName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.date}  {eventInfo.startTime}-{eventInfo.endTime}</h4>
-                            <p className="event-location" style={{padding: 0, margin: 0}}>{eventInfo.location.altLocText}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.location.city}, {eventInfo.location.state}</p>
+                            <h4 style={{padding: 0, margin: 0}}>{eventInfo.listing.orgName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.listing.date}  {eventInfo.listing.startTime}-{eventInfo.listing.endTime}</h4>
+                            <p className="event-location" style={{padding: 0, margin: 0}}>{eventInfo.listing.location.altLocText}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.listing.location.city}, {eventInfo.listing.location.state}</p>
                           </Col>
                         </Row>
                       </Col>
                       <Col sm="8">
-                        <h3 className="event-desc" style={{padding: 0, margin: 0}}>{eventInfo.eventSubtitle}</h3>
+                        <h3 className="event-desc" style={{padding: 0, margin: 0}}>{eventInfo.listing.eventSubtitle}</h3>
 
                       </Col>
                       <Col sm="1">
@@ -97,17 +154,17 @@ class EventDetails extends React.Component {
                           <p style={{padding: 0, margin: 0}}>Actions</p>
                         </Row>
                         <Row>
-                          <Button color="info" id="0" size="sm">
+                          <Button color="default" id="0" size="sm">
                             <span>
                               RSVP
                             </span>
                           </Button>
-                          <Button color="info" id="0" size="sm">
+                          <Button color="default" id="0" size="sm">
                             <span>
                               Bookmark
                             </span>
                           </Button>
-                          <Button color="info" id="0" size="sm">
+                          <Button color="default" id="0" size="sm">
                             <span>
                               Export
                             </span>
@@ -137,6 +194,20 @@ class EventDetails extends React.Component {
                           </Button>
                         </Row>
                       </Col>
+
+                      <Col sm="6">
+                        <Row>
+                          <p style={{padding: 0, margin: 0}}>Tags</p>
+                        </Row>
+                        <Row>
+                          {organizationTags}
+                          {orgCatTags}
+                          {universityTags}
+                          {fieldStudyTags}
+                          {interestTypeTags}
+                          {eventTypeTags}
+                        </Row>
+                      </Col>
                     </Row>
                   </Col>
                 </Row>
@@ -149,4 +220,4 @@ class EventDetails extends React.Component {
   }
 }
 
-export default EventDetails;
+export default EventBar;

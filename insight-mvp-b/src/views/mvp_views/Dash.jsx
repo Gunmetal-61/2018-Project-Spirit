@@ -31,6 +31,7 @@ import {
 import EventDetails from "../mvp_views/EventDetails.jsx"
 import EventCard from "../mvp_components/EventCard.jsx"
 import EventBar from "../mvp_components/EventBar.jsx"
+import EventName from "../mvp_components/EventName.jsx"
 
 import {
   aiCareerPanel,
@@ -94,7 +95,10 @@ class Dash extends React.Component {
               <CardTitle tag="h1">Your Recent Activity</CardTitle>
               </CardHeader>
               <CardBody>
-
+                <EventName eventInfo={hackNights}>
+                </EventName>
+                <EventName eventInfo={acmComp}>
+                </EventName>
               </CardBody>
             </Card>
           </Col>
