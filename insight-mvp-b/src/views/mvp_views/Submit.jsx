@@ -1,6 +1,7 @@
 import React from "react";
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import ReactDatetime from "react-datetime";
+// react plugin that creates an input with badges
 
 
 // reactstrap components
@@ -36,7 +37,6 @@ class Submit extends React.Component {
   }
 
   render() {
-
     const oTags = Object.entries(organizationTags).map(([key, value]) => (
       <Button color="info" id="0" size="sm">
         <span>
@@ -90,7 +90,7 @@ class Submit extends React.Component {
           <Col md="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h1" style={{fontWeight: 'bold'}}>Submit an Event!</CardTitle>
+                <CardTitle tag="h1" style={{textAlign: 'center', fontWeight: 'bold'}}>Submit an Event!</CardTitle>
               </CardHeader>
               <CardBody>
                 <Form action="/" className="form-horizontal" method="get">
@@ -99,9 +99,6 @@ class Submit extends React.Component {
                     <Col sm="10">
                       <FormGroup>
                         <Input type="text" />
-                        <span className="form-text">
-                          {`A block of help text that breaks onto a new line.`}
-                        </span>
                       </FormGroup>
                     </Col>
                   </Row>
@@ -117,98 +114,116 @@ class Submit extends React.Component {
                     <Label sm="2">Event Description</Label>
                     <Col sm="10">
                       <FormGroup>
-                        <Input type="text" />
+                        <Input type="textarea" />
                       </FormGroup>
                     </Col>
                   </Row>
                   <Row>
-                    <Label sm="2">Start Date</Label>
+                    <Label sm="2">Org/Organizer Name</Label>
                     <Col sm="10">
                       <FormGroup>
                         <Input type="text" />
                       </FormGroup>
                     </Col>
                   </Row>
+                  <hr />
+
+
                   <Row>
-                    <Label sm="2">Start Time</Label>
-                    <Col sm="10">
+                    <Label sm="2">Start</Label>
+                    <Col sm="5">
                       <FormGroup>
-                        <Input type="text" />
+                        <ReactDatetime
+                          inputProps={{
+                            className: "form-control",
+                            placeholder: "Date"
+                          }}
+                          timeFormat={false}
+                        />
+                      </FormGroup>
+                    </Col>
+                    <Col sm="5">
+                      <FormGroup>
+                        <ReactDatetime
+                          dateFormat={false}
+                          inputProps={{
+                            className: "form-control",
+                            placeholder: "Time"
+                          }}
+                        />
                       </FormGroup>
                     </Col>
                   </Row>
                   <Row>
-                    <Label sm="2">End Date</Label>
-                    <Col sm="10">
+                    <Label sm="2">End</Label>
+                    <Col sm="5">
                       <FormGroup>
-                        <Input type="text" />
+                        <ReactDatetime
+                          inputProps={{
+                            className: "form-control",
+                            placeholder: "Date"
+                          }}
+                          timeFormat={false}
+                        />
+                      </FormGroup>
+                    </Col>
+                    <Col sm="5">
+                      <FormGroup>
+                        <ReactDatetime
+                          dateFormat={false}
+                          inputProps={{
+                            className: "form-control",
+                            placeholder: "Time"
+                          }}
+                        />
                       </FormGroup>
                     </Col>
                   </Row>
-                  <Row>
-                    <Label sm="2">End Time</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2">Organization Name</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
+                  <hr />
+
+                  
                   <Row>
                     <Label sm="2">Location/Venue Name</Label>
                     <Col sm="10">
                       <FormGroup>
-                        <Input type="text" />
+                        <Input type="text" placeholder="e.g. &quot;Student Center Pacific Ballroom B&quot;"/>
                       </FormGroup>
                     </Col>
                   </Row>
                   <Row>
-                    <Label sm="2">Street</Label>
+                    <Label sm="2">Address</Label>
                     <Col sm="10">
                       <FormGroup>
-                        <Input type="text" />
+                        <Input type="text" placeholder="Street"/>
                       </FormGroup>
                     </Col>
                   </Row>
                   <Row>
-                    <Label sm="2">City</Label>
-                    <Col sm="10">
+                    <Label sm="2"></Label>
+                    <Col sm="3">
                       <FormGroup>
-                        <Input type="text" />
+                        <Input type="text" placeholder="City"/>
+                      </FormGroup>
+                    </Col>
+                    <Col sm="3">
+                      <FormGroup>
+                        <Input type="text" placeholder="State"/>
+                      </FormGroup>
+                    </Col>
+                    <Col sm="2">
+                      <FormGroup>
+                        <Input type="text" placeholder="Country"/>
+                      </FormGroup>
+                    </Col>
+                    <Col sm="2">
+                      <FormGroup>
+                        <Input type="text" placeholder="Zip"/>
                       </FormGroup>
                     </Col>
                   </Row>
-                  <Row>
-                    <Label sm="2">State</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2">Country</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Label sm="2">Zipcode</Label>
-                    <Col sm="10">
-                      <FormGroup>
-                        <Input type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
+                  <hr />
+
+                  
                   <Row>
                     <Label sm="2">Info URL A</Label>
                     <Col sm="10">
@@ -233,6 +248,9 @@ class Submit extends React.Component {
                       </FormGroup>
                     </Col>
                   </Row>
+                  <hr />
+
+                  
                   <Row>
                     <Label sm="2">Image</Label>
                     <Col sm="10">
@@ -241,7 +259,9 @@ class Submit extends React.Component {
                       </FormGroup>
                     </Col>
                   </Row>
+                  <hr />
 
+                  
 
 
                   <Row>
@@ -250,30 +270,35 @@ class Submit extends React.Component {
                       {oTags}
                     </Col>
                   </Row>
+                  <br />
                   <Row>
                     <Label sm="2">Organization Category</Label>
                     <Col sm="10">
                       {oCTags}
                     </Col>
                   </Row>
+                  <br />
                   <Row>
                     <Label sm="2">University</Label>
                     <Col sm="10">
                       {uTags}
                     </Col>
                   </Row>
+                  <br />
                   <Row>
                     <Label sm="2">Field of Study</Label>
                     <Col sm="10">
                       {fSTags}
                     </Col>
                   </Row>
+                  <br />
                   <Row>
                     <Label sm="2">Interest Type</Label>
                     <Col sm="10">
                       {iTTags}
                     </Col>
                   </Row>
+                  <br />
                   <Row>
                     <Label sm="2">Event Type</Label>
                     <Col sm="10">

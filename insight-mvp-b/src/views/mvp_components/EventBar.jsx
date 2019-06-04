@@ -1,7 +1,5 @@
 import React from "react";
 // nodejs library that concatenates classes
-import classNames from "classnames";
-
 
 // reactstrap components
 import {
@@ -27,42 +25,10 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
-// react components used to create a google map
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from "react-google-maps";
-
 class EventBar extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  // printTagLoop(tagArray) {
-  //   // var i;
-  //   // for (i = 0; i < tagArray.length; i++) {
-  //     return(
-  //       <div>
-  //         <Button color="default" id="0" size="sm">
-  //           <span>
-  //             Info URL #1
-  //           </span>
-  //         </Button>
-  //       </div>
-  //     );
-  //   // }
-  // }
-  //
-  // renderTags(eventInfo) {
-  //   printTagLoop(eventInfo.tags.organization);
-  //   printTagLoop(eventInfo.tags.orgCat);
-  //   printTagLoop(eventInfo.tags.university);
-  //   printTagLoop(eventInfo.tags.fieldStudy);
-  //   printTagLoop(eventInfo.tags.interestType);
-  //   printTagLoop(eventInfo.tags.eventType);
-  // }
 
   render() {
     const {eventInfo} = this.props;

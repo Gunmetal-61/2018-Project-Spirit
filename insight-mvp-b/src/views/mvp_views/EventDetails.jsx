@@ -27,16 +27,6 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
-
-// core components
-import {
-  chartExample1,
-  chartExample2,
-  chartExample3,
-  chartExample4
-} from "variables/charts.jsx";
-
-
 // react components used to create a google map
 import {
   withScriptjs,
@@ -45,6 +35,13 @@ import {
   Marker
 } from "react-google-maps";
 
+import {
+  aiCareerPanel,
+  hackNights,
+  iceSkate,
+  acmComp,
+  asuci
+} from "variables/mvp_variables/EventListingData.jsx";
 
 const RegularMap = withScriptjs(
   withGoogleMap(props => (
@@ -67,6 +64,49 @@ class EventDetails extends React.Component {
   }
 
   render() {
+    const organizationTags = aiCareerPanel.tags.organization.map((x) => (
+      <Button color="info" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+    const orgCatTags = aiCareerPanel.tags.orgCat.map((x) => (
+      <Button color="info" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+    const universityTags = aiCareerPanel.tags.university.map((x) => (
+      <Button color="success" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+    const fieldStudyTags = aiCareerPanel.tags.fieldStudy.map((x) => (
+      <Button color="success" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+    const interestTypeTags = aiCareerPanel.tags.interestType.map((x) => (
+      <Button color="warning" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+    const eventTypeTags = aiCareerPanel.tags.eventType.map((x) => (
+      <Button color="warning" id="0" size="sm">
+        <span>
+          {x}
+        </span>
+      </Button>
+    ));
+
     return(
       <>
         <div className="content">
@@ -80,81 +120,76 @@ class EventDetails extends React.Component {
               <Card className="main-detail">
                 <CardHeader>
                   <Row>
-                    <Col xs="12">
-                      <CardTitle tag="h1">Event Title</CardTitle>
-                    </Col>
-                  </Row>
+                      <Col xs="8">
+                        <CardTitle tag="h1" style={{fontWeight: 'bold', padding: 0, margin: 0}}>{aiCareerPanel.listing.eventName}</CardTitle>
+                      </Col>
+                      <Col xs="4">
+                        <h2 className="rsvp-count" style={{fontWeight: 'bold', padding: 0, margin: 0, textAlign: 'right'}}>{aiCareerPanel.listing.rsvpCount} RSVP'ed</h2>
+                      </Col>
+                    </Row>
                   <Row>
                     <Col xs="12">
-                      <h4 className="event-subtitle">Event Subtitle</h4>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs="3">
-                      <h5 className="event-subtitle">April 20, 1969 00:00-16:00</h5>
-                    </Col>
-                    <Col xs="4">
-                      <h5 className="event-subtitle">33000 Arroyo Drive, Irvine CA 92617</h5>
-                    </Col>
-                    <Col xs="4">
-                      <h5 className="event-subtitle">30 RSVP'ed</h5>
+                    <h4 style={{padding: 0, margin: 0}}>{aiCareerPanel.listing.orgName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{aiCareerPanel.listing.date}  {aiCareerPanel.listing.startTime}-{aiCareerPanel.listing.endTime}</h4>
+                    <p className="event-location" style={{padding: 0, margin: 0}}>{aiCareerPanel.listing.location.altLocText}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{aiCareerPanel.listing.location.city}, {aiCareerPanel.listing.location.state}</p>
                     </Col>
                   </Row>
                 </CardHeader>
                 <CardBody>
-                  <p className="event-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </p>
-                  <p>
-                  Signup URL
-                  </p>
-                  <p>
-                  Info URL #1
-                  </p>
-                  <p>
-                  Info URL #2
-                  </p>
+                  <p className="event-description">{aiCareerPanel.listing.description}</p>
+                  <hr />
                   <Row>
-                    <Col>
-                      <Button
-                        color="info"
-                        id="0"
-                        size="sm"
-                        tag="label"
-                      >
-                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                          RSVP
-                        </span>
-                        <span className="d-block d-sm-none">
-                          <i className="tim-icons icon-single-02" />
-                        </span>
-                      </Button>
-                      <Button
-                        color="info"
-                        id="0"
-                        size="sm"
-                        tag="label"
-                      >
-                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                          Bookmark
-                        </span>
-                        <span className="d-block d-sm-none">
-                          <i className="tim-icons icon-single-02" />
-                        </span>
-                      </Button>
-                      <Button
-                        color="info"
-                        id="0"
-                        size="sm"
-                        tag="label"
-                      >
-                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                          Export to Google Calendar
-                        </span>
-                        <span className="d-block d-sm-none">
-                          <i className="tim-icons icon-single-02" />
-                        </span>
-                      </Button>
+                    <Col sm="6">
+                      <Row>
+                        <Col>
+                          <p style={{padding: 0, margin: 0}}>Actions</p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <Button color="default" id="0" size="sm">
+                            <span>
+                              RSVP
+                            </span>
+                          </Button>
+                          <Button color="default" id="0" size="sm">
+                            <span>
+                              Bookmark
+                            </span>
+                          </Button>
+                          <Button color="default" id="0" size="sm">
+                            <span>
+                              Export
+                            </span>
+                          </Button>
+                        </Col>
+                      </Row>
+                    </Col>
+
+                    <Col sm="6">
+                      <Row>
+                        <Col>
+                          <p style={{padding: 0, margin: 0}}>External Links</p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <Button color="default" id="0" size="sm">
+                            <span>
+                              Info URL #1
+                            </span>
+                          </Button>
+                          <Button color="default" id="0" size="sm">
+                            <span>
+                              Info URL #2
+                            </span>
+                          </Button>
+                          <Button color="default" id="0" size="sm">
+                            <span>
+                              Signup URL
+                            </span>
+                          </Button>
+                        </Col>
+                      </Row>
                     </Col>
                   </Row>
                 </CardBody>
@@ -196,36 +231,12 @@ class EventDetails extends React.Component {
                   <CardTitle tag="h3">Event Tags</CardTitle>
                 </CardHeader>
                 <CardBody>
-                <Row>
-                  <Col>
-                    <Button
-                      color="info"
-                      id="0"
-                      size="sm"
-                      tag="label"
-                    >
-                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                        Tag 1
-                      </span>
-                      <span className="d-block d-sm-none">
-                        <i className="tim-icons icon-single-02" />
-                      </span>
-                    </Button>
-                    <Button
-                      color="info"
-                      id="0"
-                      size="sm"
-                      tag="label"
-                    >
-                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                        Tag 2
-                      </span>
-                      <span className="d-block d-sm-none">
-                        <i className="tim-icons icon-single-02" />
-                      </span>
-                    </Button>
-                  </Col>
-                </Row>
+                  {organizationTags}
+                  {orgCatTags}
+                  {universityTags}
+                  {fieldStudyTags}
+                  {interestTypeTags}
+                  {eventTypeTags}
                 </CardBody>
               </Card>
 
@@ -236,7 +247,7 @@ class EventDetails extends React.Component {
                 <CardBody>
                 <div className="map" id="regularMap">
                   <RegularMap
-                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiEsf9m2Sj7CRPr99keBWB1OtpFdFXfTc"
+                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCK13WMSXMGffLwJ7Ezy1VXOKEv6x0ePGk"
                     loadingElement={<div style={{ height: `100%` }} />}
                     containerElement={
                       <div

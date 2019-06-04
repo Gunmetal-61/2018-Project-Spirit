@@ -49,7 +49,7 @@ class EventDetails extends React.Component {
               <br />
               <Row>
                 <Col>
-                  <h1 style={{padding: 10, margin: 0, textAlign: 'center'}}>Search for An Event!</h1>
+                  <h1 style={{padding: 10, margin: 0, textAlign: 'center', fontWeight: 'bold'}}>Search for An Event!</h1>
                 </Col>
               </Row>
               <Row>
