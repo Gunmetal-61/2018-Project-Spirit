@@ -46,7 +46,7 @@ import {
 } from "react-google-maps";
 
 
-class EventDetails extends React.Component {
+class EventCard extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -57,21 +57,21 @@ class EventDetails extends React.Component {
       <div className="content">
         <Row>
           <Col sm="12">
-            <Card className="main-detail" style={{backgroundColor: 'DarkSalmon'}}>
+            <Card className="main-detail" style={{backgroundColor: '#c19191'}}>
               <CardBody>
                 <Row>
                   <Col xs="8">
-                    <CardTitle tag="h3" style={{fontWeight: 'bold', padding: 0, margin: 0}}>{eventInfo.eventName}</CardTitle>
+                    <CardTitle tag="h3" style={{fontWeight: 'bold', padding: 0, margin: 0}}>{eventInfo.listing.eventName}</CardTitle>
                   </Col>
                   <Col xs="4">
-                    <h3 className="rsvp-count" style={{fontWeight: 'bold', padding: 0, margin: 0, textAlign: 'right'}}>{eventInfo.rsvpCount} RSVP'ed</h3>
+                    <h3 className="rsvp-count" style={{fontWeight: 'bold', padding: 0, margin: 0, textAlign: 'right'}}>{eventInfo.listing.rsvpCount} RSVP'ed</h3>
                   </Col>
                 </Row>
 
                 <Row>
                   <Col xs="12">
-                    <h4 style={{padding: 0, margin: 0}}>{eventInfo.orgName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.date}  {eventInfo.startTime}-{eventInfo.endTime}</h4>
-                    <p className="event-location" style={{padding: 0, margin: 0}}>{eventInfo.location.altLocText}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.location.city}, {eventInfo.location.state}</p>
+                    <h4 style={{padding: 0, margin: 0}}>{eventInfo.listing.orgName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.listing.date}  {eventInfo.listing.startTime}-{eventInfo.listing.endTime}</h4>
+                    <p className="event-location" style={{padding: 0, margin: 0}}>{eventInfo.listing.location.altLocText}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.listing.location.city}, {eventInfo.listing.location.state}</p>
                   </Col>
                 </Row>
 
@@ -79,17 +79,17 @@ class EventDetails extends React.Component {
 
                 <Row className="float-right">
                   <Col>
-                    <Button color="info" id="0" size="sm">
+                    <Button color="default" id="0" size="sm">
                     <span>
                       RSVP
                     </span>
                     </Button>
-                    <Button color="info" id="0" size="sm">
+                    <Button color="default" id="0" size="sm">
                       <span>
                         Bookmark
                       </span>
                     </Button>
-                    <Button color="info" id="0" size="sm">
+                    <Button color="default" id="0" size="sm">
                     <span>
                       Export
                     </span>
@@ -105,4 +105,4 @@ class EventDetails extends React.Component {
   }
 }
 
-export default EventDetails;
+export default EventCard;
