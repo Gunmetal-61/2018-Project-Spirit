@@ -83,7 +83,7 @@ class EventBar extends React.Component {
               <CardBody>
                 <Row>
                   <Col sm="1">
-                    <img height="110px" width="110px" src={require("assets/img/uci.ico")} alt="..." />
+                    <img height="110px" width="110px" src={require("assets/img/mvp-img/" + `${eventInfo.listing.img}`)} alt="assets/img/uci.ico" />
                   </Col>
                   <Col sm="11">
                     <Row>

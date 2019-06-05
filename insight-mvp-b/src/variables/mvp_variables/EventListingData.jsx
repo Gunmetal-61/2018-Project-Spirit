@@ -89,7 +89,7 @@ var asuci = new eventInfo(
   "https://www.facebook.com/events/328936727772376/?event_time_id=328936731105709",
   "",
   "",
-  "./assets/img/mvp-img/asuci.png",
+  "asuci.png",
 
   [organizationTags.asuci],
   [orgCatTags.uniRunOrg, orgCatTags.studentLife],
@@ -118,7 +118,7 @@ var aiCareerPanel = new eventInfo(
   "https://www.facebook.com/events/663716630748361/",
   "",
   "bit.ly/mcs_aicareerpanel",
-  "./assets/img/mvp-img/uci-ics.jpg",
+  "uci-ics.jpg",
 
   [organizationTags.donaldBrenICS],
   [orgCatTags.universityDepartment],
@@ -147,7 +147,7 @@ var hackNights = new eventInfo(
   "https://www.facebook.com/events/2238215163095031/",
   "",
   "https://forms.gle/Jz5N5bJ8UwyDjBn36",
-  "./assets/img/mvp-img/hack-uci.jpg",
+  "hack-uci.jpg",
 
   [organizationTags.hack],
   [orgCatTags.clubs],
@@ -176,7 +176,7 @@ var iceSkate = new eventInfo(
   "https://www.facebook.com/events/430292567531584/?active_tab=about",
   "",
   "",
-  "./assets/img/mvp-img/thetatau.jpeg",
+  "thetatau.jpeg",
 
   [organizationTags.thetaTau],
   [orgCatTags.greekLife],
@@ -205,7 +205,7 @@ var acmComp = new eventInfo(
   "https://www.facebook.com/events/352064405499267/",
   "",
   "https://open.kattis.com/contests/y6ycsy/standings",
-  "./assets/img/mvp-img/acm-uci.png",
+  "acm-uci.png",
 
   [organizationTags.acmuci],
   [orgCatTags.clubs],

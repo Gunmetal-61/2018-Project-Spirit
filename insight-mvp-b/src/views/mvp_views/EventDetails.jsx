@@ -49,12 +49,12 @@ const RegularMap = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
       defaultZoom={8}
-      defaultCenter={{ lat: 40.748817, lng: -73.985428 }}
+      defaultCenter={{ lat: 33.644141, lng: -117.841902 }}
       defaultOptions={{
         scrollwheel: false
       }}
     >
-      <Marker position={{ lat: 40.748817, lng: -73.985428 }} />
+      <Marker position={{ lat: 33.644141, lng: -117.841902 }} />
     </GoogleMap>
   ))
 );
@@ -233,16 +233,16 @@ class EventDetails extends React.Component {
                 </CardHeader>
                 <CardBody>
                   <p>
-                  Members of ACM@UCI enjoy computer science and puzzles. We study algorithms and compete 
-                  in prestigious programming contests like ICPC and IEEExtreme. The overall mission of 
-                  our club is to maximize understanding of computer science topics and develop problem 
-                  solving skills that one would not generally learn in a classroom setting. To this end, 
-                  we organize several activities. Twice a week, we host meetings where members solve a 
-                  problem set. Also, we facilitate campuswide competitions for students to further hone 
-                  their skills. Every fall, we field teams in ICPC and IEEExtreme. Last year, all 5 teams 
-                  we sent to the SoCal ICPC Regional were in the top 25 out of 98, and 2 teams at IEEExtreme 
-                  were in the top 100 in the world. We also organize an annual 8 week seminar series where 
-                  club members present on a research topic of interest. Currently, our club consists of ~500 
+                  Members of ACM@UCI enjoy computer science and puzzles. We study algorithms and compete
+                  in prestigious programming contests like ICPC and IEEExtreme. The overall mission of
+                  our club is to maximize understanding of computer science topics and develop problem
+                  solving skills that one would not generally learn in a classroom setting. To this end,
+                  we organize several activities. Twice a week, we host meetings where members solve a
+                  problem set. Also, we facilitate campuswide competitions for students to further hone
+                  their skills. Every fall, we field teams in ICPC and IEEExtreme. Last year, all 5 teams
+                  we sent to the SoCal ICPC Regional were in the top 25 out of 98, and 2 teams at IEEExtreme
+                  were in the top 100 in the world. We also organize an annual 8 week seminar series where
+                  club members present on a research topic of interest. Currently, our club consists of ~500
                   members, with an average attendance of 30 at our meetings.
                   </p>
                   <Button
