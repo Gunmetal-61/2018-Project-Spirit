@@ -5,11 +5,20 @@
   "repository": "https://github.com/Gunmetal-61/2018-Project-Spirit",
 
   "dependencies": {
+    "@types/googlemaps": "3.30.16",
+    "@types/markerclustererplus": "2.1.33",
+    "@types/react": "16.7.18",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "chart.js": "2.7.3",
     "classnames": "2.2.6",
+    "concurrently": "^4.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "history": "4.7.2",
     "moment": "2.23.0",
+    "mongoose": "^5.6.3",
+    "morgan": "^1.9.1",
     "node-sass": "4.11.0",
     "nouislider": "12.1.0",
     "perfect-scrollbar": "1.4.0",
@@ -39,7 +48,7 @@
     "@types/react": "16.7.18"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"node server.js\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -56,5 +65,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "Disregard this stock README from the template that I am currently working off of for the prototype for now (which can be found in the folder insight-mvp-b).",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
