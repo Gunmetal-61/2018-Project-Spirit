@@ -1,8 +1,9 @@
 {
   "name": "black-dashboard-pro-react",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
-  "homepage": "https://creativetimofficial.github.io/black-dashboard-pro-react/admin/dashboard",
+  "repository": "https://github.com/Gunmetal-61/2018-Project-Spirit",
+
   "dependencies": {
     "bootstrap": "^4.3.1",
     "chart.js": "2.7.3",

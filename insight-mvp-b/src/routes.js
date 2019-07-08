@@ -1,3 +1,4 @@
+// default template dependencies
 import VectorMap from "views/maps/VectorMap.jsx";
 import GoogleMaps from "views/maps/GoogleMaps.jsx";
 import FullScreenMap from "views/maps/FullScreenMap.jsx";
@@ -27,7 +28,7 @@ import Login from "views/pages/Login.jsx";
 import Rtl from "views/pages/Rtl.jsx";
 import Lock from "views/pages/Lock.jsx";
 
-
+// My application's (Insight) dependencies
 import Dash from "views/mvp_views/Dash.jsx";
 import EventDetails from "views/mvp_views/EventDetails.jsx";
 import Events from "views/mvp_views/Events.jsx";
@@ -37,6 +38,7 @@ import Submit from "views/mvp_views/Submit.jsx";
 
 
 const routes = [
+  // My (Insight's) routes
   {
     path: "/dash",
     name: "Dashboard",
@@ -95,7 +97,8 @@ const routes = [
 
 
 
-  
+  // default template's routes
+
   // {
   //   path: "/dashboard",
   //   name: "Dashboard",
