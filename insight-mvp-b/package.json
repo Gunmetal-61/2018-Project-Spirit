@@ -3,7 +3,6 @@
   "version": "1.1.0",
   "private": true,
   "repository": "https://github.com/Gunmetal-61/2018-Project-Spirit",
-
   "dependencies": {
     "@types/googlemaps": "3.30.16",
     "@types/markerclustererplus": "2.1.33",
@@ -58,8 +57,10 @@
     "@types/markerclustererplus": "2.1.33",
     "@types/react": "16.7.18"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "concurrently \"node server.js\" \"react-scripts start\"",
+    "start": "react-scripts start",
+    "start-alt": "concurrently \"node server.js\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -79,7 +80,6 @@
   ],
   "description": "Disregard this stock README from the template that I am currently working off of for the prototype for now (which can be found in the folder insight-mvp-b).",
   "main": "server.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC"

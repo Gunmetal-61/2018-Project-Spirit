@@ -51,7 +51,7 @@ mongoose.connection.on('error', function() { //if error, complain in console
  * returns a list of all events (not their detailed info)
  */
 app.get('/api/event_list', function(req, res, next) {
-
+  var 
 });
 
 
@@ -60,11 +60,12 @@ app.get('/api/event_list', function(req, res, next) {
  * returns an event's detailed information
  */
 app.get('/api/event', function(req, res, next) {
-  Character.findOne({ characterId: id }, function(err, event) {
+  var id = req.params.id;
+  Event.findById(id, function(err, event) {
     if (err) return next(err);
 
-    if (!character) {
-      return res.status(404).send({ message: 'Character not found.' });
+    if (!event) {
+      return res.status(404).send({ message: 'Event not found.' });
     }
 
     res.send(event);
@@ -95,7 +96,14 @@ app.put('/api/event', function(req, res, next) {
  * used for deleting an event entry from the system
  */
 app.delete('/api/event', function(req, res, next) {
-
+  Event.remove({ _id: req.body.id }, function(err) {
+    if (!err) {
+      message.type = 'Event deleted!';
+    }
+    else {
+      message.type = 'Event not found for deletion.';
+    }
+  });
 });
 
 
@@ -143,7 +151,14 @@ app.post('/api/tag', function(req, res, next) {
  * 
  */
 app.delete('/api/tag', function(req, res, next) {
-
+  Tag.remove({ _id: req.body.id }, function(err) {
+    if (!err) {
+      message.type = 'Tag deleted!';
+    }
+    else {
+      message.type = 'Tag not found for deletion.';
+    }
+  });
 });
 
 
