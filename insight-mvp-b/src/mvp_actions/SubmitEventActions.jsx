@@ -1,28 +1,49 @@
-import alt from '../alt';
+import alt from 'alt';
+import axios from 'axios';
 
 class SubmitEventActions {
     constructor() {
         this.generateActions(
-            'addCharacterSuccess',
-            'addCharacterFail',
+            'addEventSuccess',
+            'addEventFail',
             'updateName',
-            'updateGender',
-            'invalidName',
-            'invalidGender'
+            'updateSubtitle',
+            'updateDescription',
+            'updateRSVPCount',
+            'updateStartDate',
+            'updateEndDate',
+            'updateOrg',
+            'updateLocName',
+            'updateStreet',
+            'updateCity',
+            'updateState',
+            'updateCountry',
+            'updateZipcode',
         );
     }
 
-  addCharacter(name, gender) {
-    $.ajax({
-        type: 'POST',
-        url: '/api/characters',
-        data: { name: name, gender: gender }
-    })
-        .done((data) => {
-            this.actions.addCharacterSuccess(data.message);
+    addEvent(name, subtitle, description, rsvpCount, startDate, endDate, org,
+        locName, street, city, state, country, zipcode) {
+        axios.put('/api/event', {
+            name: name,
+            subtitle: subtitle,
+            description: description,
+            rsvpCount: rsvpCount,
+            startDate: startDate,
+            endDate: endDate,
+            org: org,
+            locName: locName,
+            street: street,
+            city: city,
+            state: state,
+            country: country,
+            zipcode: zipcode
         })
-        .fail((jqXhr) => {
-            this.actions.addCharacterFail(jqXhr.responseJSON.message);
+        .then(function(response) {
+            this.actions.addEventSuccess("Success");
+        })
+        .catch(function(error) {
+            this.actions.addEventFail("Failed");
         });
     }
 }

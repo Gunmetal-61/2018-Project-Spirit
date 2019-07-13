@@ -4,7 +4,7 @@ import ReactDatetime from "react-datetime";
 // react plugin that creates an input with badges
 
 import SubmitEventStore from "mvp_stores/SubmitEventStore.jsx";
-import SubmitEventActions from "mvp_stores/SubmitEventActions.jsx";
+import SubmitEventActions from "mvp_actions/SubmitEventActions.jsx";
 
 
 // reactstrap components
@@ -57,20 +57,22 @@ class SubmitEvent extends React.Component {
     event.preventDefault();
 
     var name = this.state.name.trim();
-    var gender = this.state.gender;
+    var subtitle = this.state.subtitle.trim();
+    var description = this.state.description.trim();
+    var rsvpCount = this.state.rsvpCount.trim();
+    var startDate = this.state.startDate.trim();
+    var endDate = this.state.endDate.trim();
+    var org = this.state.org.trim();
+    var locName = this.state.locName.trim();
+    var street = this.state.street.trim();
+    var city = this.state.city.trim();
+    var state = this.state.state.trim();
+    var country = this.state.country.trim();
+    var subtitle = this.state.subtitle.trim();
+    var zipcode = this.state.zipcode.trim();
 
-    if (!name) {
-      AddCharacterActions.invalidName();
-      this.refs.nameTextField.getDOMNode().focus();
-    }
-
-    if (!gender) {
-      AddCharacterActions.invalidGender();
-    }
-
-    if (name && gender) {
-      AddCharacterActions.addCharacter(name, gender);
-    }
+    SubmitEventActions.addEvent(name, subtitle, description, rsvpCount, startDate, endDate, org,
+      locName, street, city, state, country, zipcode);
   }
 
   render() {
@@ -140,7 +142,7 @@ class SubmitEvent extends React.Component {
                       <Label sm="2">Event Name</Label>
                       <Col sm="10">
                         <FormGroup>
-                          <Input type="text" />
+                          <Input type="text" value={this.state.name} onChange={SubmitEventActions.updateName} autoFocus/>
                         </FormGroup>
                       </Col>
                     </Row>
@@ -148,7 +150,7 @@ class SubmitEvent extends React.Component {
                       <Label sm="2">Event Subtitle</Label>
                       <Col sm="10">
                         <FormGroup>
-                          <Input type="text" />
+                          <Input type="text" value={this.state.subtitle} onChange={SubmitEventActions.updateSubtitle}/>
                         </FormGroup>
                       </Col>
                     </Row>
@@ -156,7 +158,7 @@ class SubmitEvent extends React.Component {
                       <Label sm="2">Event Description</Label>
                       <Col sm="10">
                         <FormGroup>
-                          <Input type="textarea" />
+                          <Input type="textarea" value={this.state.description} onChange={SubmitEventActions.updateDescription}/>
                         </FormGroup>
                       </Col>
                     </Row>
@@ -164,7 +166,7 @@ class SubmitEvent extends React.Component {
                       <Label sm="2">Org/Organizer Name</Label>
                       <Col sm="10">
                         <FormGroup>
-                          <Input type="text" />
+                          <Input type="text" value={this.state.org} onChange={SubmitEventActions.updateOrg}/>
                         </FormGroup>
                       </Col>
                     </Row>
@@ -183,6 +185,7 @@ class SubmitEvent extends React.Component {
                               placeholder: "Date"
                             }}
                             timeFormat={false}
+                            value={this.state.startDate} onChange={SubmitEventActions.updateStartDate}
                           />
                         </FormGroup>
                       </Col>

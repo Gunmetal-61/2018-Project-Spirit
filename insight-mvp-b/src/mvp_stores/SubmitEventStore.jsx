@@ -1,45 +1,111 @@
-import alt from '../alt';
+import alt from 'alt';
 import SubmitEventActions from 'mvp_actions/SubmitEventActions';
 
 class SubmitEventStore {
     constructor() {
         this.bindActions(SubmitEventActions);
         this.name = '';
-        this.gender = '';
-        this.helpBlock = '';
-        this.nameValidationState = '';
-        this.genderValidationState = '';
+        this.subtitle = '';
+        this.description = '';
+        this.rsvpCount = '';
+        this.startDate = '';
+        this.endDate = '';
+        this.org = '';
+        this.locName = '';
+        this.street = '';
+        this.city = '';
+        this.state = '';
+        this.country = '';
+        this.zipcode = '';
     }
     
-    onAddCharacterSuccess(successMessage) {
-        this.nameValidationState = 'has-success';
+    onAddEventSuccess(successMessage) {
+        this.eventValidationState = 'has-success';
         this.helpBlock = successMessage;
     }
     
-    onAddCharacterFail(errorMessage) {
-        this.nameValidationState = 'has-error';
+    onAddEventFail(errorMessage) {
+        this.eventValidationState = 'has-error';
         this.helpBlock = errorMessage;
     }
-    
+
     onUpdateName(event) {
         this.name = event.target.value;
         this.nameValidationState = '';
         this.helpBlock = '';
     }
-    
-    onUpdateGender(event) {
-        this.gender = event.target.value;
-        this.genderValidationState = '';
+
+    onUpdateSubtitle(event) {
+        this.subtitle = event.target.value;
+        this.subtitleValidationState = '';
+        this.helpBlock = '';
     }
-    
-    onInvalidName() {
-        this.nameValidationState = 'has-error';
-        this.helpBlock = 'Please enter a character name.';
+
+    onUpdateDescription(event) {
+        this.description = event.target.value;
+        this.descriptionValidationState = '';
+        this.helpBlock = '';
     }
-    
-    onInvalidGender() {
-        this.genderValidationState = 'has-error';
+
+    onUpdateRSVPCount(event) {
+        this.rsvpCount = event.target.value;
+        this.rsvpCountValidationState = '';
+        this.helpBlock = '';
+    }
+
+    onUpdateStartDate(event) {
+        this.startDate = event.target.value;
+        this.startDateValidationState = '';
+        this.helpBlock = '';
+    }
+
+    onUpdateEndDate(event) {
+        this.endDate = event.target.value;
+        this.endDateValidationState = '';
+        this.helpBlock = '';
+    }
+
+    onUpdateOrg(event) {
+        this.org = event.target.value;
+        this.orgValidationState = '';
+        this.helpBlock = '';
+    }
+
+    onUpdateLocName(event) {
+        this.locName = event.target.value;
+        this.locNameValidationState = '';
+        this.helpBlock = '';
+    }
+
+    onUpdateStreet(event) {
+        this.street = event.target.value;
+        this.streetValidationState = '';
+        this.helpBlock = '';
+    }
+
+    onUpdateCity(event) {
+        this.city = event.target.value;
+        this.cityValidationState = '';
+        this.helpBlock = '';
+    }
+
+    onUpdateState(event) {
+        this.state = event.target.value;
+        this.stateValidationState = '';
+        this.helpBlock = '';
+    }
+
+    onUpdateCountry(event) {
+        this.country = event.target.value;
+        this.countryValidationState = '';
+        this.helpBlock = '';
+    }
+
+    onUpdateZipcode(event) {
+        this.zipcode = event.target.value;
+        this.zipcodeValidationState = '';
+        this.helpBlock = '';
     }
 }
   
-export default alt.createActions(SubmitEventStore);
+export default alt.createStore(SubmitEventStore);
