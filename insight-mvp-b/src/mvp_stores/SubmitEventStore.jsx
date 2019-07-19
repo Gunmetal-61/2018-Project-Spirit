@@ -1,22 +1,26 @@
-import alt from 'alt';
+import alt from '../alt';
 import SubmitEventActions from 'mvp_actions/SubmitEventActions';
 
 class SubmitEventStore {
     constructor() {
         this.bindActions(SubmitEventActions);
-        this.name = '';
-        this.subtitle = '';
-        this.description = '';
-        this.rsvpCount = '';
-        this.startDate = '';
-        this.endDate = '';
-        this.org = '';
-        this.locName = '';
-        this.street = '';
-        this.city = '';
-        this.state = '';
-        this.country = '';
-        this.zipcode = '';
+        this.state = {
+            name: '',
+            subtitle: '',
+            description: '',
+            rsvpCount: '',
+            startDate: '',
+            endDate: '',
+            org: '',
+            locName: '',
+            street: '',
+            city: '',
+            state: '',
+            country: '',
+            zipcode: ''
+        }
+        console.log("IOEJFOISDJFOISJD");
+        console.log(this.name);
     }
     
     onAddEventSuccess(successMessage) {
@@ -30,9 +34,18 @@ class SubmitEventStore {
     }
 
     onUpdateName(event) {
-        this.name = event.target.value;
+        // return {
+        //     this.name = event.target.value;
+        //     this.nameValidationState = '';
+        //     this.helpBlock = '';
+        // }
+        console.log(this.state.name);
+        console.log(event.target.value);
+        console.log(this.state.name);
+        this.state.name = event.target.value;
         this.nameValidationState = '';
         this.helpBlock = '';
+        
     }
 
     onUpdateSubtitle(event) {

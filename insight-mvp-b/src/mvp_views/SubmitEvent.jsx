@@ -36,9 +36,13 @@ import {
 
 class SubmitEvent extends React.Component {
   constructor(props) {
+    console.log("1");
     super(props);
+    console.log("2");
     this.state = SubmitEventStore.getState();
+    console.log(this.state);
     this.onChange = this.onChange.bind(this);
+    console.log("4");
   }
 
   componentDidMount() {
@@ -55,7 +59,9 @@ class SubmitEvent extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
+    console.log("80");
+    console.log(this.name);
+    console.log(this.state.name);
     var name = this.state.name.trim();
     var subtitle = this.state.subtitle.trim();
     var description = this.state.description.trim();
@@ -135,7 +141,7 @@ class SubmitEvent extends React.Component {
               <CardBody>
                 
                 
-                <Form onSubmit={this.handleSubmit} className="form-horizontal" method="get">
+                <Form onSubmit={this.handleSubmit.bind(this)} className="form-horizontal" method="get">
                   <Card style={{backgroundColor: '#385170'}}>
                     <h3 style={{textAlign: 'center', padding: 0, margin: 5}}>Basic Info</h3>
                     <Row>
@@ -184,7 +190,6 @@ class SubmitEvent extends React.Component {
                               className: "form-control",
                               placeholder: "Date"
                             }}
-                            timeFormat={false}
                             value={this.state.startDate} onChange={SubmitEventActions.updateStartDate}
                           />
                         </FormGroup>
