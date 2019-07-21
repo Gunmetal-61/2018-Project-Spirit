@@ -19,105 +19,94 @@ class SubmitEventStore {
             country: '',
             zipcode: ''
         }
-        console.log("IOEJFOISDJFOISJD");
-        console.log(this.name);
     }
-    
+
     onAddEventSuccess(successMessage) {
-        this.eventValidationState = 'has-success';
-        this.helpBlock = successMessage;
+        this.state.eventValidationState = 'has-success';
+        this.state.helpBlock = successMessage;
     }
     
     onAddEventFail(errorMessage) {
-        this.eventValidationState = 'has-error';
-        this.helpBlock = errorMessage;
+        this.state.eventValidationState = 'has-error';
+        this.state.helpBlock = errorMessage;
     }
 
     onUpdateName(event) {
-        // return {
-        //     this.name = event.target.value;
-        //     this.nameValidationState = '';
-        //     this.helpBlock = '';
-        // }
-        console.log(this.state.name);
-        console.log(event.target.value);
-        console.log(this.state.name);
         this.state.name = event.target.value;
-        this.nameValidationState = '';
-        this.helpBlock = '';
-        
+        this.state.nameValidationState = '';
+        this.state.helpBlock = '';     
     }
 
     onUpdateSubtitle(event) {
-        this.subtitle = event.target.value;
-        this.subtitleValidationState = '';
-        this.helpBlock = '';
+        this.state.subtitle = event.target.value;
+        this.state.subtitleValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateDescription(event) {
-        this.description = event.target.value;
-        this.descriptionValidationState = '';
-        this.helpBlock = '';
+        this.state.description = event.target.value;
+        this.state.descriptionValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateRSVPCount(event) {
-        this.rsvpCount = event.target.value;
-        this.rsvpCountValidationState = '';
-        this.helpBlock = '';
+        this.state.rsvpCount = event.target.value;
+        this.state.rsvpCountValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateStartDate(event) {
-        this.startDate = event.target.value;
-        this.startDateValidationState = '';
-        this.helpBlock = '';
+        this.state.startDate = event.target.value;
+        this.state.startDateValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateEndDate(event) {
-        this.endDate = event.target.value;
-        this.endDateValidationState = '';
-        this.helpBlock = '';
+        this.state.endDate = event.target.value;
+        this.state.endDateValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateOrg(event) {
-        this.org = event.target.value;
-        this.orgValidationState = '';
-        this.helpBlock = '';
+        this.state.org = event.target.value;
+        this.state.orgValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateLocName(event) {
-        this.locName = event.target.value;
-        this.locNameValidationState = '';
-        this.helpBlock = '';
+        this.state.locName = event.target.value;
+        this.state.locNameValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateStreet(event) {
-        this.street = event.target.value;
-        this.streetValidationState = '';
-        this.helpBlock = '';
+        this.state.street = event.target.value;
+        this.state.streetValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateCity(event) {
-        this.city = event.target.value;
-        this.cityValidationState = '';
-        this.helpBlock = '';
+        this.state.city = event.target.value;
+        this.state.cityValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateState(event) {
-        this.state = event.target.value;
-        this.stateValidationState = '';
-        this.helpBlock = '';
+        this.state.state = event.target.value;
+        this.state.stateValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateCountry(event) {
-        this.country = event.target.value;
-        this.countryValidationState = '';
-        this.helpBlock = '';
+        this.state.country = event.target.value;
+        this.state.countryValidationState = '';
+        this.state.helpBlock = '';
     }
 
     onUpdateZipcode(event) {
-        this.zipcode = event.target.value;
-        this.zipcodeValidationState = '';
-        this.helpBlock = '';
+        this.state.zipcode = event.target.value;
+        this.state.zipcodeValidationState = '';
+        this.state.helpBlock = '';
     }
 }
   

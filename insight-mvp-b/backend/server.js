@@ -87,7 +87,7 @@ app.post('/api/event', function(req, res, next) {
  * used for creating a new event entry AND it's dedicated URL
  */
 app.put('/api/event', function(req, res, next) {
-
+  console.log("SERVER CALLED");
 });
 
 
@@ -180,25 +180,6 @@ app.use(function(req, res) {
   });
 });
 
-///////////////////////////////////////////////////////////////////////////////
-
-/**
- * Socket.io stuff.
- */
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
-var onlineUsers = 0;
-
-io.sockets.on('connection', function(socket) {
-  onlineUsers++;
-
-  io.sockets.emit('onlineUsers', { onlineUsers: onlineUsers });
-
-  socket.on('disconnect', function() {
-    onlineUsers--;
-    io.sockets.emit('onlineUsers', { onlineUsers: onlineUsers });
-  });
-});
 
 server.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));

@@ -40,10 +40,10 @@ class SubmitEventActions {
             zipcode: zipcode
         })
         .then(function(response) {
-            this.actions.addEventSuccess("Success");
+            console.log("Success");
         })
         .catch(function(error) {
-            this.actions.addEventFail("Failed");
+            console.log("Failed");
         });
     }
 }

@@ -55,6 +55,7 @@ class SubmitEvent extends React.Component {
 
   onChange(state) {
     this.setState(state);
+    console.log(this.state.name);
   }
 
   handleSubmit(event) {
@@ -62,6 +63,20 @@ class SubmitEvent extends React.Component {
     console.log("80");
     console.log(this.name);
     console.log(this.state.name);
+    console.log(this.state.subtitle);
+    console.log(this.state.description);
+    console.log(this.state.rsvpCount);
+    console.log(this.state.startDate);
+    console.log(this.state.endDate);
+    console.log(this.state.org);
+    console.log(this.state.locName);
+    console.log(this.state.street);
+    console.log(this.state.city);
+    console.log(this.state.state);
+    console.log(this.state.country);
+    console.log(this.state.subtitle);
+    console.log(this.state.zipcode);
+
     var name = this.state.name.trim();
     var subtitle = this.state.subtitle.trim();
     var description = this.state.description.trim();
@@ -183,50 +198,31 @@ class SubmitEvent extends React.Component {
                     <h3 style={{textAlign: 'center', padding: 0, margin: 5}}>Time</h3>
                     <Row>
                       <Label sm="2">Start</Label>
-                      <Col sm="5">
+                      <Col sm="10">
                         <FormGroup>
                           <ReactDatetime
                             inputProps={{
                               className: "form-control",
                               placeholder: "Date"
                             }}
-                            value={this.state.startDate} onChange={SubmitEventActions.updateStartDate}
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col sm="5">
-                        <FormGroup>
-                          <ReactDatetime
-                            dateFormat={false}
-                            inputProps={{
-                              className: "form-control",
-                              placeholder: "Time"
-                            }}
+                            value={this.state.startDate} 
+                            onChange={SubmitEventActions.updateStartDate}
                           />
                         </FormGroup>
                       </Col>
                     </Row>
+
                     <Row>
                       <Label sm="2">End</Label>
-                      <Col sm="5">
+                      <Col sm="10">
                         <FormGroup>
                           <ReactDatetime
                             inputProps={{
                               className: "form-control",
                               placeholder: "Date"
                             }}
-                            timeFormat={false}
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col sm="5">
-                        <FormGroup>
-                          <ReactDatetime
-                            dateFormat={false}
-                            inputProps={{
-                              className: "form-control",
-                              placeholder: "Time"
-                            }}
+                            value={this.state.endDate} 
+                            onChange={SubmitEventActions.updateEndDate}
                           />
                         </FormGroup>
                       </Col>
@@ -240,7 +236,11 @@ class SubmitEvent extends React.Component {
                       <Label sm="2">Location/Venue Name</Label>
                       <Col sm="10">
                         <FormGroup>
-                          <Input type="text" placeholder="e.g. &quot;Student Center Pacific Ballroom B&quot;"/>
+                          <Input type="text" 
+                            placeholder="e.g. &quot;Student Center Pacific Ballroom B&quot;"
+                            value={this.state.locName} 
+                            onChange={SubmitEventActions.updateLocName}
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -248,7 +248,11 @@ class SubmitEvent extends React.Component {
                       <Label sm="2">Address</Label>
                       <Col sm="10">
                         <FormGroup>
-                          <Input type="text" placeholder="Street"/>
+                          <Input type="text" 
+                            placeholder="Street"
+                            value={this.state.street} 
+                            onChange={SubmitEventActions.updateStreet}  
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -256,22 +260,38 @@ class SubmitEvent extends React.Component {
                       <Label sm="2"></Label>
                       <Col sm="3">
                         <FormGroup>
-                          <Input type="text" placeholder="City"/>
+                          <Input type="text" 
+                            placeholder="City"
+                            value={this.state.city} 
+                            onChange={SubmitEventActions.updateCity}
+                          />
                         </FormGroup>
                       </Col>
                       <Col sm="3">
                         <FormGroup>
-                          <Input type="text" placeholder="State"/>
+                          <Input type="text" 
+                            placeholder="State"
+                            value={this.state.state} 
+                            onChange={SubmitEventActions.updateState}  
+                          />
                         </FormGroup>
                       </Col>
                       <Col sm="2">
                         <FormGroup>
-                          <Input type="text" placeholder="Country"/>
+                          <Input type="text" 
+                            placeholder="Country"
+                            value={this.state.country} 
+                            onChange={SubmitEventActions.updateCountry}  
+                          />
                         </FormGroup>
                       </Col>
                       <Col sm="2">
                         <FormGroup>
-                          <Input type="text" placeholder="Zip"/>
+                          <Input type="text" 
+                            placeholder="Zip"
+                            value={this.state.zipcode} 
+                            onChange={SubmitEventActions.updateZipcode}  
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
