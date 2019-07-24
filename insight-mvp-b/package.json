@@ -3,6 +3,26 @@
   "version": "1.1.0",
   "private": true,
   "repository": "https://github.com/Gunmetal-61/2018-Project-Spirit",
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "root": [
+            "./src"
+          ],
+          "alias": {
+            "test": "./test",
+            "underscore": "lodash"
+          }
+        }
+      ]
+    ]
+  },
   "dependencies": {
     "@types/googlemaps": "3.30.16",
     "@types/markerclustererplus": "2.1.33",
@@ -19,14 +39,14 @@
     "concurrently": "^4.1.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "history": "4.7.2",
+    "history": "^1.17.0",
     "moment": "2.23.0",
     "mongoose": "^5.6.3",
     "morgan": "^1.9.1",
     "node-sass": "4.11.0",
     "nouislider": "12.1.0",
     "perfect-scrollbar": "1.4.0",
-    "prop-types": "15.6.2",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-big-calendar": "0.20.2",
     "react-bootstrap-sweetalert": "4.4.1",
@@ -58,13 +78,36 @@
     "@types/markerclustererplus": "2.1.33",
     "@types/react": "16.7.18"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.1.19",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "babel-register": "^6.3.13",
+    "babelify": "^7.2.0",
+    "bower": "^1.6.5",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-if": "^2.0.0",
+    "gulp-less": "^3.0.3",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-util": "^3.0.7",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.6.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "start-alt": "concurrently \"node server.js\" \"react-scripts start\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start-cra": "react-scripts start",
+    "build-cra": "react-scripts build",
+    "test-cra": "react-scripts test",
+    "eject-cra": "react-scripts eject",
+    "start": "node backend/server.js",
+    "watch": "nodemon backend/server.js",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "compile-sass": "node-sass src/assets/scss/black-dashboard-pro-react.scss src/assets/css/black-dashboard-pro-react.css",
     "minify-sass": "node-sass src/assets/scss/black-dashboard-pro-react.scss src/assets/css/black-dashboard-pro-react.min.css --output-style compressed",

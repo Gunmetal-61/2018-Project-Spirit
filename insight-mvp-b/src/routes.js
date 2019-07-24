@@ -1,32 +1,42 @@
+// import React from 'react';
+// import {Route} from 'react-router';
+// import Dash from "mvp_views/Dash.jsx";
+
+// export default (
+//   <Route component={App}>
+//     <Route path='/' component={Dash} />
+//   </Route>
+// );
+
 // default template dependencies
-import VectorMap from "template/views/maps/VectorMap.jsx";
-import GoogleMaps from "template/views/maps/GoogleMaps.jsx";
-import FullScreenMap from "template/views/maps/FullScreenMap.jsx";
-import ReactTables from "template/views/tables/ReactTables.jsx";
-import RegularTables from "template/views/tables/RegularTables.jsx";
-import ExtendedTables from "template/views/tables/ExtendedTables.jsx";
-import Wizard from "template/views/forms/Wizard.jsx";
-import ValidationForms from "template/views/forms/ValidationForms.jsx";
-import ExtendedForms from "template/views/forms/ExtendedForms.jsx";
-import RegularForms from "template/views/forms/RegularForms.jsx";
-import Calendar from "template/views/Calendar.jsx";
-import Widgets from "template/views/Widgets.jsx";
-import Charts from "template/views/Charts.jsx";
-import Dashboard from "template/views/Dashboard.jsx";
-import Buttons from "template/views/components/Buttons.jsx";
-import SweetAlert from "template/views/components/SweetAlert.jsx";
-import Notifications from "template/views/components/Notifications.jsx";
-import Grid from "template/views/components/Grid.jsx";
-import Typography from "template/views/components/Typography.jsx";
-import Panels from "template/views/components/Panels.jsx";
-import Icons from "template/views/components/Icons.jsx";
-import Pricing from "template/views/pages/Pricing.jsx";
-import Register from "template/views/pages/Register.jsx";
-import Timeline from "template/views/pages/Timeline.jsx";
-import User from "template/views/pages/User.jsx";
-import Login from "template/views/pages/Login.jsx";
-import Rtl from "template/views/pages/Rtl.jsx";
-import Lock from "template/views/pages/Lock.jsx";
+// import VectorMap from "template/views/maps/VectorMap.jsx";
+// import GoogleMaps from "template/views/maps/GoogleMaps.jsx";
+// import FullScreenMap from "template/views/maps/FullScreenMap.jsx";
+// import ReactTables from "template/views/tables/ReactTables.jsx";
+// import RegularTables from "template/views/tables/RegularTables.jsx";
+// import ExtendedTables from "template/views/tables/ExtendedTables.jsx";
+// import Wizard from "template/views/forms/Wizard.jsx";
+// import ValidationForms from "template/views/forms/ValidationForms.jsx";
+// import ExtendedForms from "template/views/forms/ExtendedForms.jsx";
+// import RegularForms from "template/views/forms/RegularForms.jsx";
+// import Calendar from "template/views/Calendar.jsx";
+// import Widgets from "template/views/Widgets.jsx";
+// import Charts from "template/views/Charts.jsx";
+// import Dashboard from "template/views/Dashboard.jsx";
+// import Buttons from "template/views/components/Buttons.jsx";
+// import SweetAlert from "template/views/components/SweetAlert.jsx";
+// import Notifications from "template/views/components/Notifications.jsx";
+// import Grid from "template/views/components/Grid.jsx";
+// import Typography from "template/views/components/Typography.jsx";
+// import Panels from "template/views/components/Panels.jsx";
+// import Icons from "template/views/components/Icons.jsx";
+// import Pricing from "template/views/pages/Pricing.jsx";
+// import Register from "template/views/pages/Register.jsx";
+// import Timeline from "template/views/pages/Timeline.jsx";
+// import User from "template/views/pages/User.jsx";
+// import Login from "template/views/pages/Login.jsx";
+// import Rtl from "template/views/pages/Rtl.jsx";
+// import Lock from "template/views/pages/Lock.jsx";
 
 // My application's (Insight) dependencies
 import Dash from "mvp_views/Dash.jsx";
