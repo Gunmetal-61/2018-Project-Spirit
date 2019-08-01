@@ -1,11 +1,12 @@
 // Babel ES6/JSX Compiler
-require('babel-register');
+require('@babel/register');
 
 // //react routes
-// var swig  = require('swig');
-// var React = require('react');
-// var ReactDOM = require('react-dom/server');
-var Router = require('react-router');
+var swig  = require('swig');
+var React = require('react');
+var ReactDOM = require('react-dom/server');
+import StaticRouter from "react-router";
+var Router = require('react-router-dom');
 var routes = require('../src/routes');
 
 // Express middleware dependencies
@@ -164,22 +165,52 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // middleware function executed on every request to server
 // unless request is handled by an API endpoint
-app.use(function(req, res) {
-  console.log(70);
-  console.log(routes.default);
-  Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
-    if (err) {
-      res.status(500).send(err.message)
-    } else if (redirectLocation) {
-      res.status(302).redirect(redirectLocation.pathname + redirectLocation.search)
-    } else if (renderProps) {
-      var html = ReactDOM.renderToString(React.createElement(Router.RoutingContext, renderProps));
-      var page = swig.renderFile('views/index.html', { html: html });
-      res.status(200).send(page);
-    } else {
-      res.status(404).send('Page Not Found')
-    }
-  });
+// app.use(function(req, res) {
+//   console.log(70);
+//   console.log(req.url);
+//   console.log(routes.default);
+//   console.log(70);
+//   Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
+//     if (err) {
+//       res.status(500).send(err.message)
+//     } else if (redirectLocation) {
+//       res.status(302).redirect(redirectLocation.pathname + redirectLocation.search)
+//     } else if (renderProps) {
+//       console.log(80);
+//       console.log(renderProps);
+//       console.log(80);
+//       var html = ReactDOM.renderToString(React.createElement(Router.RoutingContext, renderProps));
+//       var page = swig.renderFile('../index.html', { html: html });
+//       res.status(200).send(page);
+//     } else {
+//       res.status(404).send('Page Not Found')
+//     }
+//   });
+// });
+
+// app.get('*', function (req, res){
+//   // console.log(70);
+//   // console.log(req.url);
+//   // // console.log(routes.default);
+//   // console.log(__dirname);
+//   // console.log(path.resolve(__dirname, '../', 'src/template/layouts/Admin/admin.jsx'));
+//   // console.log(70);
+//   // res.sendFile(path.resolve(__dirname, '../', 'src/template/layouts/Admin/admin.jsx'));
+//   console.log(path.join(path.resolve(__dirname, '../') + '/public/index.html'));
+//   console.log(path.join(__dirname + '/client/build/index.html'));
+//   res.sendFile(path.join(path.resolve(__dirname, '../') + '/public/index.html'));
+// });
+
+app.get("*", (req, res) => {
+  // This context object contains the results of the render
+  const context = {};
+
+  const html = ReactDOM.renderToString(
+    <StaticRouter location={req.url} context={context}>
+      <App />
+    </StaticRouter>
+  );
+  res.status(200).send(html);
 });
 
 

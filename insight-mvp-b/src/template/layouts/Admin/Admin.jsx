@@ -13,7 +13,7 @@ import FixedPlugin from "template/components/FixedPlugin/FixedPlugin.jsx";
 
 import routes from "routes.js";
 
-import logo from "template/assets/img/uci.ico";
+// import logo from "template/assets/img/uci.png";
 
 var ps;
 
@@ -173,7 +173,7 @@ class Admin extends React.Component {
           logo={{
             outterLink: "http://localhost:3000/admin/dash",
             text: "Insight",
-            imgSrc: logo
+            imgSrc: "template/assets/img/uci.png"
           }}
           closeSidebar={this.closeSidebar}
         />

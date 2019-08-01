@@ -39,13 +39,27 @@
 // import Lock from "template/views/pages/Lock.jsx";
 
 // My application's (Insight) dependencies
+import React from 'react';
+// import {Route} from 'react-router';
+
 import Dash from "mvp_views/Dash.jsx";
 import EventDetails from "mvp_views/EventDetails.jsx";
 import Events from "mvp_views/Events.jsx";
 import Org from "mvp_views/Org.jsx";
 import Review from "mvp_views/Review.jsx";
 import Submit from "mvp_views/SubmitEvent.jsx";
+import Admin from 'template/layouts/Admin/Admin';
 
+// export default (
+//   <Route component={Admin}>
+//     <Route path='/dash' component={Dash} layout='/admin'/>
+//     <Route path='/events' component={Events} layout='/admin'/>
+//     <Route path='/event-details' component={EventDetails} layout='/admin'/>
+//     <Route path='/organizations' component={Org} layout='/admin'/>
+//     <Route path='/submit-event-sug' component={Submit} layout='/admin'/>
+//     <Route path='review-submissions' component={Review} layout='/admin'/>
+//   </Route>
+// );
 
 const routes = [
   // My (Insight's) routes

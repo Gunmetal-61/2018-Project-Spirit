@@ -5,10 +5,24 @@
   "repository": "https://github.com/Gunmetal-61/2018-Project-Spirit",
   "babel": {
     "presets": [
-      "es2015",
-      "react"
+      "@babel/preset-env",
+      "@babel/preset-react"
     ],
     "plugins": [
+      [
+        "@babel/plugin-transform-arrow-functions",
+        {
+          "spec": true
+        }
+      ],
+      [
+        "@babel/plugin-proposal-object-rest-spread",
+        null
+      ],
+      [
+        "@babel/plugin-proposal-class-properties",
+        null
+      ],
       [
         "module-resolver",
         {
@@ -38,6 +52,7 @@
     "compression": "^1.6.0",
     "concurrently": "^4.1.1",
     "cors": "^2.8.5",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "history": "^1.17.0",
     "moment": "2.23.0",
@@ -59,7 +74,6 @@
     "react-images": "^0.5.19",
     "react-jvectormap": "0.0.4",
     "react-notification-alert": "0.0.9",
-    "react-router": "^1.0.0",
     "react-router-dom": "4.3.1",
     "react-scripts": "2.1.3",
     "react-select": "2.2.0",
@@ -79,11 +93,13 @@
     "@types/react": "16.7.18"
   },
   "devDependencies": {
-    "babel-core": "^6.1.19",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-transform-arrow-functions": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
     "babel-plugin-module-resolver": "^3.2.0",
-    "babel-preset-es2015": "^6.1.18",
-    "babel-preset-react": "^6.1.18",
-    "babel-register": "^6.3.13",
     "babelify": "^7.2.0",
     "bower": "^1.6.5",
     "browserify": "^12.0.1",
@@ -102,12 +118,12 @@
     "watchify": "^3.6.0"
   },
   "scripts": {
-    "start-cra": "react-scripts start",
-    "build-cra": "react-scripts build",
-    "test-cra": "react-scripts test",
-    "eject-cra": "react-scripts eject",
-    "start": "node backend/server.js",
-    "watch": "nodemon backend/server.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start:server": "set NODE_ENV=development&& node src/server/index.js",
+    "watch:server": "set NODE_ENV=development&& nodemon src/server/index.js",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "compile-sass": "node-sass src/assets/scss/black-dashboard-pro-react.scss src/assets/css/black-dashboard-pro-react.css",
     "minify-sass": "node-sass src/assets/scss/black-dashboard-pro-react.scss src/assets/css/black-dashboard-pro-react.min.css --output-style compressed",
