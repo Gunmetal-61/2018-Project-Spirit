@@ -13,7 +13,7 @@ import FixedPlugin from "template/components/FixedPlugin/FixedPlugin.jsx";
 
 import routes from "routes.js";
 
-import logo from "template/assets/img/react-logo.png";
+// import logo from "template/assets/img/react-logo.png";
 
 var ps;
 
@@ -185,7 +185,7 @@ class Admin extends React.Component {
           logo={{
             outterLink: "https://www.creative-tim.com/",
             text: "الإبداعية تيم",
-            imgSrc: logo
+            imgSrc: "template/assets/img/react-logo.png"
           }}
           closeSidebar={this.closeSidebar}
         />

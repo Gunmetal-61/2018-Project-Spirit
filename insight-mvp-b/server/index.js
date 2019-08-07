@@ -6,9 +6,9 @@
  * This file (index.js) contains nothing more than the connection logic to view the server-fed content
  * from the specified port.
  */ 
-
+console.log('89');
 const app = require('./app');
-
+console.log('1000');
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, ()=>{

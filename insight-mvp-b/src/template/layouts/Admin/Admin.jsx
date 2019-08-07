@@ -103,7 +103,7 @@ class Admin extends React.Component {
         }
       } else {
         if (
-          window.location.pathname.indexOf(
+          this.props.location.pathname.indexOf(
             routes[i].layout + routes[i].path
           ) !== -1
         ) {
@@ -150,59 +150,61 @@ class Admin extends React.Component {
   };
   render() {
     return (
-      <div className="wrapper">
-        <div className="rna-container">
-          <NotificationAlert ref="notificationAlert" />
-        </div>
-        <div
-          className="navbar-minimize-fixed"
-          style={{ opacity: this.state.opacity }}
-        >
-          <button
-            className="minimize-sidebar btn btn-link btn-just-icon"
-            onClick={this.handleMiniClick}
+      <>
+        <div className="wrapper">
+          <div className="rna-container">
+            <NotificationAlert ref="notificationAlert" />
+          </div>
+          <div
+            className="navbar-minimize-fixed"
+            style={{ opacity: this.state.opacity }}
           >
-            <i className="tim-icons icon-align-center visible-on-sidebar-regular text-muted" />
-            <i className="tim-icons icon-bullet-list-67 visible-on-sidebar-mini text-muted" />
-          </button>
-        </div>
-        <Sidebar
-          {...this.props}
-          routes={routes}
-          activeColor={this.state.activeColor}
-          logo={{
-            outterLink: "http://localhost:3000/admin/dash",
-            text: "Insight",
-            imgSrc: "template/assets/img/uci.png"
-          }}
-          closeSidebar={this.closeSidebar}
-        />
-        <div
-          className="main-panel"
-          ref="mainPanel"
-          data={this.state.activeColor}
-        >
-          <AdminNavbar
+            <button
+              className="minimize-sidebar btn btn-link btn-just-icon"
+              onClick={this.handleMiniClick}
+            >
+              <i className="tim-icons icon-align-center visible-on-sidebar-regular text-muted" />
+              <i className="tim-icons icon-bullet-list-67 visible-on-sidebar-mini text-muted" />
+            </button>
+          </div>
+          <Sidebar
             {...this.props}
-            handleMiniClick={this.handleMiniClick}
-            brandText={this.getActiveRoute(routes)}
-            sidebarOpened={this.state.sidebarOpened}
-            toggleSidebar={this.toggleSidebar}
+            routes={routes}
+            activeColor={this.state.activeColor}
+            logo={{
+              outterLink: "http://localhost:3000/admin/dash",
+              text: "Insight",
+              imgSrc: "template/assets/img/uci.png"
+            }}
+            closeSidebar={this.closeSidebar}
           />
-          <Switch>{this.getRoutes(routes)}</Switch>
-          {// we don't want the Footer to be rendered on full screen maps page
-          this.props.location.pathname.indexOf("full-screen-map") !==
-          -1 ? null : (
-            <Footer fluid />
-          )}
+          <div
+            className="main-panel"
+            ref="mainPanel"
+            data={this.state.activeColor}
+          >
+            <AdminNavbar
+              {...this.props}
+              handleMiniClick={this.handleMiniClick}
+              brandText={this.getActiveRoute(routes)}
+              sidebarOpened={this.state.sidebarOpened}
+              toggleSidebar={this.toggleSidebar}
+            />
+            <Switch>{this.getRoutes(routes)}</Switch>
+            {// we don't want the Footer to be rendered on full screen maps page
+            this.props.location.pathname.indexOf("full-screen-map") !==
+            -1 ? null : (
+              <Footer fluid />
+            )}
+          </div>
+          <FixedPlugin
+            activeColor={this.state.activeColor}
+            sidebarMini={this.state.sidebarMini}
+            handleActiveClick={this.handleActiveClick}
+            handleMiniClick={this.handleMiniClick}
+          />
         </div>
-        <FixedPlugin
-          activeColor={this.state.activeColor}
-          sidebarMini={this.state.sidebarMini}
-          handleActiveClick={this.handleActiveClick}
-          handleMiniClick={this.handleMiniClick}
-        />
-      </div>
+      </>
     );
   }
 }
