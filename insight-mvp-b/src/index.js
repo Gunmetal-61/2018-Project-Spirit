@@ -13,11 +13,9 @@ import App from './App';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 const hist = createHistory();
-console.log(102);
 ReactDOM.render(
   <BrowserRouter history={hist}>
     <App />
   </BrowserRouter>,
   document.getElementById("root")
 );
-console.log(103);
