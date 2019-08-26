@@ -7,6 +7,11 @@ import AuthLayout from "template/layouts/Auth/Auth.jsx";
 import AdminLayout from "template/layouts/Admin/Admin.jsx";
 import RTLLayout from "template/layouts/RTL/RTL.jsx";
 
+import "template/assets/css/nucleo-icons.css";
+import "template/assets/css/black-dashboard-pro-react.css";
+import "template/assets/demo/demo.css";
+import "react-notification-alert/dist/animate.css";
+
 const App = () => (
   <Switch>
     <Route path="/auth" render={props => <AuthLayout {...props} />} />
