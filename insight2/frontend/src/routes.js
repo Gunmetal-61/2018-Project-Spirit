@@ -38,64 +38,64 @@ import Place from "@material-ui/icons/Place";
 import Timeline from "@material-ui/icons/Timeline";
 import WidgetsIcon from "@material-ui/icons/Widgets";
 
-// Insight Project Pages
-import Dash from "views/-insight/Dash.jsx";
-import EventDetails from "views/-insight/EventDetails.jsx";
-import Events from "views/-insight/Events.jsx";
-import Org from "views/-insight/Org.jsx";
-import Review from "views/-insight/Review.jsx";
-import Submit from "views/-insight/SubmitEvent.jsx";
+// // Insight Project Pages
+// import Dash from "views/-insight/Dash.jsx";
+// import EventDetails from "views/-insight/EventDetails.jsx";
+// import Events from "views/-insight/Events.jsx";
+// import Org from "views/-insight/Org.jsx";
+// import Review from "views/-insight/Review.jsx";
+// import Submit from "views/-insight/SubmitEvent.jsx";
 
 var dashRoutes = [
-  // My (Insight's) routes
-  {
-    path: "/dash",
-    name: "Dashboard",
-    rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-components",
-    component:Dash,
-    layout: "/admin"
-  },
-  {
-    path: "/events",
-    name: "Browse Events",
-    rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-map-big",
-    component: Events,
-    layout: "/admin"
-  },
-  {
-    path: "/event-details",
-    name: "Event Details",
-    rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-calendar-60",
-    component: EventDetails,
-    layout: "/admin"
-  },
-  {
-    path: "/organizations",
-    name: "Organizations",
-    rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-world",
-    component: Org,
-    layout: "/admin"
-  },
-  {
-    path: "/submit-event-sug",
-    name: "Submit Event",
-    rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-upload",
-    component: Submit,
-    layout: "/admin"
-  },
-  {
-    path: "/review-submissions",
-    name: "Review Submissions (Admin)",
-    rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-paper",
-    component: Review,
-    layout: "/admin"
-  },
+  // // My (Insight's) routes
+  // {
+  //   path: "/dash",
+  //   name: "Dashboard",
+  //   rtlName: "لوحة القيادة",
+  //   icon: "tim-icons icon-components",
+  //   component:Dash,
+  //   layout: "/admin"
+  // },
+  // {
+  //   path: "/events",
+  //   name: "Browse Events",
+  //   rtlName: "لوحة القيادة",
+  //   icon: "tim-icons icon-map-big",
+  //   component: Events,
+  //   layout: "/admin"
+  // },
+  // {
+  //   path: "/event-details",
+  //   name: "Event Details",
+  //   rtlName: "لوحة القيادة",
+  //   icon: "tim-icons icon-calendar-60",
+  //   component: EventDetails,
+  //   layout: "/admin"
+  // },
+  // {
+  //   path: "/organizations",
+  //   name: "Organizations",
+  //   rtlName: "لوحة القيادة",
+  //   icon: "tim-icons icon-world",
+  //   component: Org,
+  //   layout: "/admin"
+  // },
+  // {
+  //   path: "/submit-event-sug",
+  //   name: "Submit Event",
+  //   rtlName: "لوحة القيادة",
+  //   icon: "tim-icons icon-upload",
+  //   component: Submit,
+  //   layout: "/admin"
+  // },
+  // {
+  //   path: "/review-submissions",
+  //   name: "Review Submissions (Admin)",
+  //   rtlName: "لوحة القيادة",
+  //   icon: "tim-icons icon-paper",
+  //   component: Review,
+  //   layout: "/admin"
+  // },
 
 
 
