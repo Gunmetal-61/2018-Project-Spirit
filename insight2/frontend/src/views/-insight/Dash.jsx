@@ -5,32 +5,14 @@ import classNames from "classnames";
 
 // reactstrap components
 import {
-  Button,
-  ButtonGroup,
   Card,
-  CardImg,
   CardHeader,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  Label,
-  FormGroup,
-  Input,
-  Progress,
-  Table,
-  Row,
-  Col,
-  UncontrolledTooltip
-} from "reactstrap";
+  CardContent,
+  Grid
+} from "@material-ui/core";
 
 // core components
-import EventDetails from "./EventDetails.jsx"
 import EventCard from "components/-insight/EventCard.jsx"
-import EventBar from "components/-insight/EventBar.jsx"
 import EventName from "components/-insight/EventName.jsx"
 
 import {
@@ -49,62 +31,62 @@ class Dash extends React.Component {
   render() {
     return(
       <div className="content">
-        <Row>
-          <Col xl="4" lg="6">
+        <Grid container>
+          <Grid item xl="4" lg="6">
             <Card>
               <CardHeader>
-                <CardTitle tag="h1">Following</CardTitle>
+                <h1>Following</h1>
               </CardHeader>
-              <CardBody>
+              <CardContent>
                 <EventCard eventInfo={aiCareerPanel}>
                 </EventCard>
                 <EventCard eventInfo={iceSkate}>
                 </EventCard>
                 <EventCard eventInfo={asuci}>
                 </EventCard>
-              </CardBody>
+              </CardContent>
             </Card>
-          </Col>
-          <Col xl="4" lg="6">
+          </Grid>
+          <Grid item xl="4" lg="6">
             <Card>
               <CardHeader>
-                <CardTitle tag="h1">From Your Field of Study</CardTitle>
+                <h1>From Your Field of Study</h1>
               </CardHeader>
-              <CardBody>
+              <CardContent>
                 <EventCard eventInfo={aiCareerPanel}>
                 </EventCard>
                 <EventCard eventInfo={hackNights}>
                 </EventCard>
                 <EventCard eventInfo={acmComp}>
                 </EventCard>
-              </CardBody>
+              </CardContent>
             </Card>
-          </Col>
-          <Col xl="4" lg="12">
+          </Grid>
+          <Grid item xl="4" lg="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h1">New on Insight</CardTitle>
+                <h1>New on Insight</h1>
               </CardHeader>
-              <CardBody>
+              <CardContent>
                 <EventName eventInfo={asuci}>
                 </EventName>
-              </CardBody>
+              </CardContent>
             </Card>
 
             <Card>
-            <CardHeader>
-              <CardTitle tag="h1">Your Recent Activity</CardTitle>
+              <CardHeader>
+                <h1>Your Recent Activity</h1>
               </CardHeader>
-              <CardBody>
+              <CardContent>
                 <EventName eventInfo={hackNights}>
                 </EventName>
                 <EventName eventInfo={acmComp}>
                 </EventName>
-              </CardBody>
+              </CardContent>
             </Card>
-          </Col>
+          </Grid>
 
-        </Row>
+        </Grid>
       </div>
     );
   }

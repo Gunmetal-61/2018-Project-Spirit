@@ -39,7 +39,7 @@ import Timeline from "@material-ui/icons/Timeline";
 import WidgetsIcon from "@material-ui/icons/Widgets";
 
 // // Insight Project Pages
-// import Dash from "views/-insight/Dash.jsx";
+import Dash from "views/-insight/Dash.jsx";
 // import EventDetails from "views/-insight/EventDetails.jsx";
 // import Events from "views/-insight/Events.jsx";
 // import Org from "views/-insight/Org.jsx";
@@ -48,14 +48,14 @@ import WidgetsIcon from "@material-ui/icons/Widgets";
 
 var dashRoutes = [
   // // My (Insight's) routes
-  // {
-  //   path: "/dash",
-  //   name: "Dashboard",
-  //   rtlName: "لوحة القيادة",
-  //   icon: "tim-icons icon-components",
-  //   component:Dash,
-  //   layout: "/admin"
-  // },
+  {
+    path: "/dash",
+    name: "Dashboard",
+    rtlName: "لوحة القيادة",
+    icon: "tim-icons icon-components",
+    component:Dash,
+    layout: "/admin"
+  },
   // {
   //   path: "/events",
   //   name: "Browse Events",

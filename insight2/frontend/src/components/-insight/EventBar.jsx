@@ -1,29 +1,14 @@
 import React from "react";
 // nodejs library that concatenates classes
 
-// reactstrap components
 import {
   Button,
-  ButtonGroup,
   Card,
-  CardImg,
   CardHeader,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  Label,
-  FormGroup,
-  Input,
-  Progress,
-  Table,
-  Row,
-  Col,
-  UncontrolledTooltip
-} from "reactstrap";
+  CardContent,
+  Grid
+} from "@material-ui/core";
+
 
 class EventBar extends React.Component {
   constructor(props) {
@@ -33,7 +18,7 @@ class EventBar extends React.Component {
   render() {
     const {eventInfo} = this.props;
     const organizationTags = eventInfo.tags.organization.map((x) => (
-      <Button color="info" id="0" size="sm">
+      <Button Gridor="info" id="0" size="sm">
         <span>
           {x}
         </span>
@@ -77,49 +62,49 @@ class EventBar extends React.Component {
 
     return(
       <div className="content">
-        <Row>
-          <Col sm="12">
+        <Grid>
+          <Grid item sm="12">
             <Card className="main-detail" style={{backgroundColor: '#c19191'}}>
-              <CardBody>
-                <Row>
-                  <Col sm="1">
+              <CardContent>
+                <Grid container>
+                  <Grid item sm="1">
                     <img height="110px" width="110px" src={require("assets/-insight/img/" + `${eventInfo.listing.img}`)} alt="assets/-insight/img/uci.ico" />
-                  </Col>
-                  <Col sm="11">
-                    <Row>
-                      <Col xs="8">
-                        <CardTitle tag="h2" style={{fontWeight: 'bold', padding: 0, margin: 0}}>{eventInfo.listing.eventName}</CardTitle>
-                      </Col>
-                      <Col xs="4">
+                  </Grid>
+                  <Grid item sm="11">
+                    <Grid container>
+                      <Grid item xs="8">
+                        <CardHeader tag="h2" style={{fontWeight: 'bold', padding: 0, margin: 0}}>{eventInfo.listing.eventName}</CardHeader>
+                      </Grid>
+                      <Grid item xs="4">
                         <h2 className="rsvp-count" style={{fontWeight: 'bold', padding: 0, margin: 0, textAlign: 'right'}}>{eventInfo.listing.rsvpCount} RSVP'ed</h2>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col sm="3">
-                        <Row>
-                          <Col xs="12">
+                      </Grid>
+                    </Grid>
+                    <Grid container>
+                      <Grid item sm="3">
+                        <Grid container>
+                          <Grid item xs="12">
                             <h4 style={{padding: 0, margin: 0}}>{eventInfo.listing.orgName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.listing.date}  {eventInfo.listing.startTime}-{eventInfo.listing.endTime}</h4>
                             <p className="event-location" style={{padding: 0, margin: 0}}>{eventInfo.listing.location.altLocText}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{eventInfo.listing.location.city}, {eventInfo.listing.location.state}</p>
-                          </Col>
-                        </Row>
-                      </Col>
-                      <Col sm="8">
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid item sm="8">
                         <h3 className="event-desc" style={{padding: 0, margin: 0}}>{eventInfo.listing.eventSubtitle}</h3>
 
-                      </Col>
-                      <Col sm="1">
+                      </Grid>
+                      <Grid item sm="1">
 
-                      </Col>
-                    </Row>
+                      </Grid>
+                    </Grid>
 
                     <hr />
 
-                    <Row>
-                      <Col sm="3">
-                        <Row>
+                    <Grid container>
+                      <Grid item sm="3">
+                        <Grid container>
                           <p style={{padding: 0, margin: 0}}>Actions</p>
-                        </Row>
-                        <Row>
+                        </Grid>
+                        <Grid container>
                           <Button color="default" id="0" size="sm">
                             <span>
                               RSVP
@@ -135,14 +120,14 @@ class EventBar extends React.Component {
                               Export
                             </span>
                           </Button>
-                        </Row>
-                      </Col>
+                        </Grid>
+                      </Grid>
 
-                      <Col sm="3">
-                        <Row>
+                      <Grid item sm="3">
+                        <Grid container>
                           <p style={{padding: 0, margin: 0}}>External Links</p>
-                        </Row>
-                        <Row>
+                        </Grid>
+                        <Grid container>
                           <Button color="default" id="0" size="sm">
                             <span>
                               Info URL #1
@@ -158,29 +143,29 @@ class EventBar extends React.Component {
                               Signup URL
                             </span>
                           </Button>
-                        </Row>
-                      </Col>
+                        </Grid>
+                      </Grid>
 
-                      <Col sm="6">
-                        <Row>
+                      <Grid item sm="6">
+                        <Grid container>
                           <p style={{padding: 0, margin: 0}}>Tags</p>
-                        </Row>
-                        <Row>
+                        </Grid>
+                        <Grid container>
                           {organizationTags}
                           {orgCatTags}
                           {universityTags}
                           {fieldStudyTags}
                           {interestTypeTags}
                           {eventTypeTags}
-                        </Row>
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-              </CardBody>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </CardContent>
             </Card>
-          </Col>
-        </Row>
+          </Grid>
+        </Grid>
       </div>
     );
   }
