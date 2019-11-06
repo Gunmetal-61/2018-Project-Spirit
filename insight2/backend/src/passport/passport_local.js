@@ -14,22 +14,25 @@ passport.deserializeUser(function(user, done) {
   done(null, user);
 });
 
-passport.use(
-  new LocalStrategy(
-    {
-      usernameField: "email",
-      passwordField: "passwd",
-      passReqToCallback: true, // optional
-      session: false //will use in the future
-    },
-    function(req, username, password, done) {
-      // authentication
-      // currently bypassing
-      console.log(username, password);
-      return done(null, { user: "joe" });
-    }
-  )
-);
+/*
+ *More official version of authenticating and verifying password
+ *Searched via documentation (see link below)
+ *http://www.passportjs.org/docs/facebook/
+ */
+passport.use(new LocalStrategy(
+  function(req,username, password, done) {
+    User.findOne({ username: req.body.username }, function(err, user) {
+      if (err) { return done(err); }         //handles any other exceptions
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' }); //invalid username
+      }
+      if (!user.validPassword(req.body.password)) {
+        return done(null, false, { message: 'Incorrect password.' }); //incorrect password
+      }
+      return done(null, user);      //supplies Passport with user that authenticated
+    });
+  }
+));
 
 module.exports = {
   passport: passport,
