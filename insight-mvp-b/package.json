@@ -58,7 +58,7 @@
     "moment": "2.23.0",
     "mongoose": "^5.6.3",
     "morgan": "^1.9.1",
-    "node-sass": "4.11.0",
+    "node-sass": "7.0.0",
     "nodemon": "^1.19.1",
     "nouislider": "12.1.0",
     "perfect-scrollbar": "1.4.0",
